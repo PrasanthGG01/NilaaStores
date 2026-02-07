@@ -1305,11 +1305,11 @@
         </div>
         <div class="cart-line">
           <span>Shipping</span>
-          <span>₹<span id="shippingValue">1</span></span>
+          <span>₹<span id="shippingValue">0</span></span>
         </div>
         <div class="cart-line">
           <span>Estimated Weight</span>
-          <span><span id="weightValue">1</span> kg</span>
+          <span><span id="weightValue">0</span> kg</span>
         </div>
         <div class="cart-total cart-line">
           <span>Total</span>
@@ -1631,7 +1631,7 @@
       if (loc === "OtherStates") shippingPerKg = 120;
 
       let shipping = 0;
-      if (shippingPerKg > 1 && weight > 1) {
+      if (shippingPerKg > 0 && weight > 0) {
         shipping = shippingPerKg * weight;
       }
 
@@ -1815,6 +1815,7 @@
   </script>
 </body>
 </html>
+
 
 
 
