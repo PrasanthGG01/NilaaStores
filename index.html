@@ -1,1686 +1,2001 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Nilaa Stores | A‑Z Saree Draping Essentials</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --primary: #7b1f5b;
-      --primary-dark: #5c1542;
-      --accent: #f7c948;
-      --bg-gradient-start: #fdf2ff;
-      --bg-gradient-end: #fbe6ff;
-      --card-bg: #ffffff;
-      --text: #2b1b26;
-      --muted: #7b6a80;
-      --border-soft: rgba(133, 76, 125, 0.12);
-      --border-strong: rgba(133, 76, 125, 0.25);
-      --danger: #c0392b;
-      --success: #1e8f5a;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nilaa Stores | A‑Z Saree Draping Essentials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --primary: #7b1f5b;
+        --primary-dark: #5c1542;
+        --accent: #f7c948;
+        --bg-gradient-start: #fdf2ff;
+        --bg-gradient-end: #fbe6ff;
+        --card-bg: #ffffff;
+        --text: #2b1b26;
+        --muted: #7b6a80;
+        --border-soft: rgba(133, 76, 125, 0.12);
+        --border-strong: rgba(133, 76, 125, 0.25);
+        --danger: #c0392b;
+        --success: #1e8f5a;
+      }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
 
-    body {
-      min-height: 100vh;
-      background: radial-gradient(circle at top left, #ffe9ff 0, #fdf2ff 32%, #fbe6ff 64%, #f9f3ff 100%);
-      color: var(--text);
-      line-height: 1.5;
-    }
+      body {
+        min-height: 100vh;
+        background: radial-gradient(
+          circle at top left,
+          #ffe9ff 0,
+          #fdf2ff 32%,
+          #fbe6ff 64%,
+          #f9f3ff 100%
+        );
+        color: var(--text);
+        line-height: 1.5;
+      }
 
-    a { color: inherit; text-decoration: none; }
-    button { cursor: pointer; }
-    img { max-width: 100%; display: block; }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        cursor: pointer;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
 
-    /* Header */
-    header {
-      backdrop-filter: blur(14px);
-      background: linear-gradient(to right, rgba(255, 253, 255, 0.96), rgba(253, 242, 255, 0.9));
-      border-bottom: 1px solid rgba(133, 76, 125, 0.15);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 0;
-      gap: 16px;
-    }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .brand-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #ffe4f2 0, #f7b2df 50%, #f6e8ff 100%);
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 6px 18px rgba(110, 25, 90, 0.18);
-      flex-shrink: 0;
-    }
-    .brand-logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .brand {
-      display: flex;
-      flex-direction: column;
-    }
-    .brand-title {
-      font-weight: 700;
-      font-size: 20px;
-      color: var(--primary-dark);
-      letter-spacing: 0.03em;
-    }
-    .brand-sub {
-      font-size: 11px;
-      color: var(--muted);
-    }
-    .nav-links {
-      display: flex;
-      gap: 14px;
-      font-size: 14px;
-      flex: 1;
-      justify-content: center;
-    }
-    .nav-links a {
-      padding: 6px 12px;
-      border-radius: 999px;
-      color: #5b3a66;
-      background: transparent;
-      border: 1px solid transparent;
-      transition: all 0.18s ease-out;
-    }
-    .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.8);
-      border-color: rgba(133, 76, 125, 0.16);
-      box-shadow: 0 6px 14px rgba(121, 52, 99, 0.14);
-    }
-    .cart-button {
-      position: relative;
-      background: linear-gradient(135deg, #7b1f5b, #b23c7d);
-      color: white;
-      border: none;
-      border-radius: 999px;
-      padding: 8px 16px;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      box-shadow: 0 8px 20px rgba(123, 31, 91, 0.3);
-    }
-    .cart-count {
-      background: white;
-      color: var(--primary-dark);
-      border-radius: 999px;
-      padding: 2px 7px;
-      font-size: 11px;
-      font-weight: 600;
-    }
+      /* Header */
+      header {
+        backdrop-filter: blur(14px);
+        background: linear-gradient(
+          to right,
+          rgba(255, 253, 255, 0.96),
+          rgba(253, 242, 255, 0.9)
+        );
+        border-bottom: 1px solid rgba(133, 76, 125, 0.15);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+        gap: 16px;
+      }
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 999px;
+        background: radial-gradient(
+          circle at 30% 20%,
+          #ffe4f2 0,
+          #f7b2df 50%,
+          #f6e8ff 100%
+        );
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 6px 18px rgba(110, 25, 90, 0.18);
+        flex-shrink: 0;
+      }
+      .brand-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .brand {
+        display: flex;
+        flex-direction: column;
+      }
+      .brand-title {
+        font-weight: 700;
+        font-size: 20px;
+        color: var(--primary-dark);
+        letter-spacing: 0.03em;
+      }
+      .brand-sub {
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .nav-links {
+        display: flex;
+        gap: 14px;
+        font-size: 14px;
+        flex: 1;
+        justify-content: center;
+      }
+      .nav-links a {
+        padding: 6px 12px;
+        border-radius: 999px;
+        color: #5b3a66;
+        background: transparent;
+        border: 1px solid transparent;
+        transition: all 0.18s ease-out;
+      }
+      .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.8);
+        border-color: rgba(133, 76, 125, 0.16);
+        box-shadow: 0 6px 14px rgba(121, 52, 99, 0.14);
+      }
+      .cart-button {
+        position: relative;
+        background: linear-gradient(135deg, #7b1f5b, #b23c7d);
+        color: white;
+        border: none;
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+        box-shadow: 0 8px 20px rgba(123, 31, 91, 0.3);
+      }
+      .cart-count {
+        background: white;
+        color: var(--primary-dark);
+        border-radius: 999px;
+        padding: 2px 7px;
+        font-size: 11px;
+        font-weight: 600;
+      }
 
-    /* Hero */
-    .hero {
-      padding: 26px 0 24px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-      gap: 28px;
-      align-items: center;
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: var(--primary-dark);
-      border: 1px solid rgba(244, 196, 234, 0.8);
-      margin-bottom: 10px;
-      box-shadow: 0 6px 16px rgba(133, 76, 125, 0.12);
-    }
-    .hero-title {
-      font-size: 30px;
-      font-weight: 750;
-      margin-bottom: 8px;
-      letter-spacing: 0.01em;
-      color: #3b1532;
-    }
-    .hero-sub {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 18px;
-      max-width: 460px;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, #7b1f5b, #b23c7d);
-      color: white;
-      border-radius: 999px;
-      border: none;
-      padding: 9px 16px;
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 10px 24px rgba(123, 31, 91, 0.35);
-    }
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--primary-dark);
-      border-radius: 999px;
-      border: 1px solid rgba(242, 202, 255, 0.9);
-      padding: 8px 14px;
-      font-size: 13px;
-    }
-    .btn-whatsapp {
-      background: linear-gradient(135deg, #22c35e, #128c7e);
-      color: white;
-      border-radius: 999px;
-      border: none;
-      padding: 9px 16px;
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 10px 24px rgba(18, 140, 126, 0.35);
-    }
-    .whatsapp-icon {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      border: 2px solid white;
-      display: inline-block;
-      background: #128c7e;
-    }
-    .hero-note {
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .hero-image-wrapper {
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid rgba(242, 215, 242, 0.9);
-      box-shadow: 0 26px 60px rgba(113, 36, 94, 0.35);
-      background: radial-gradient(circle at top left, #fff3ff 0, #f8e3ff 40%, #f2dafb 90%);
-    }
-    .hero-card {
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 12px 14px;
-      border: 1px solid var(--border-soft);
-      font-size: 13px;
-      box-shadow: 0 16px 38px rgba(88, 33, 78, 0.18);
-    }
-    .hero-card h3 {
-      font-size: 15px;
-      margin-bottom: 6px;
-      color: var(--primary-dark);
-    }
-    .hero-card ul {
-      margin-left: 16px;
-      margin-bottom: 8px;
-    }
-    .hero-card li {
-      margin-bottom: 4px;
-    }
-    .small-note {
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    /* Sections */
-    section {
-      padding: 24px 0;
-    }
-    section h2 {
-      font-size: 20px;
-      margin-bottom: 8px;
-      color: #3b1532;
-    }
-    section p.section-sub {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 16px;
-      max-width: 640px;
-    }
-
-    /* Filters */
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-    .filter-pill {
-      border-radius: 999px;
-      border: 1px solid rgba(240, 204, 236, 0.8);
-      padding: 5px 12px;
-      font-size: 12px;
-      background: rgba(255, 255, 255, 0.9);
-      cursor: pointer;
-      color: #5a3157;
-    }
-    .filter-pill.active {
-      background: linear-gradient(135deg, #f7d7ff, #f2c4ff);
-      border-color: var(--primary);
-      color: var(--primary-dark);
-      font-weight: 600;
-      box-shadow: 0 6px 16px rgba(133, 76, 125, 0.25);
-    }
-
-    /* Products */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 245, 255, 0.98));
-      border-radius: 16px;
-      padding: 10px;
-      border: 1px solid var(--border-soft);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 8px;
-      box-shadow: 0 18px 40px rgba(84, 31, 77, 0.18);
-    }
-    .card-img {
-      width: 100%;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 6px;
-      background: radial-gradient(circle at top, #fff8ff 0, #f7e9ff 40%, #f3e3ff 100%);
-    }
-    .card-img-scroll {
-      display: flex;
-      gap: 6px;
-      overflow-x: auto;
-      padding: 4px;
-    }
-    .card-img-scroll img {
-      flex: 0 0 auto;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      box-shadow: 0 6px 16px rgba(120, 40, 97, 0.18);
-    }
-    .card-badge {
-      font-size: 11px;
-      color: #b8721b;
-      background: #fff7e1;
-      border-radius: 999px;
-      padding: 2px 8px;
-      display: inline-block;
-      margin-bottom: 4px;
-    }
-    .card-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 2px;
-      color: #3d1635;
-    }
-    .card-desc {
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .options-select {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid rgba(237, 208, 243, 0.9);
-      padding: 6px 8px;
-      font-size: 12px;
-      margin-bottom: 6px;
-      background: rgba(255, 255, 255, 0.96);
-    }
-    .price-line {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: #4c1c40;
-    }
-    .qty-row {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 6px;
-    }
-    .qty-row button {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      border: 1px solid rgba(226, 193, 234, 0.9);
-      background: rgba(253, 245, 255, 0.96);
-      font-size: 16px;
-      line-height: 1;
-    }
-    .qty-value {
-      min-width: 24px;
-      text-align: center;
-      font-size: 13px;
-    }
-    .btn-add {
-      background: linear-gradient(135deg, #7b1f5b, #b23c7d);
-      color: white;
-      border-radius: 999px;
-      border: none;
-      padding: 7px 12px;
-      font-size: 12px;
-      width: 100%;
-      box-shadow: 0 10px 24px rgba(123, 31, 91, 0.3);
-    }
-
-    /* Kits */
-    .kits-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .kit-list {
-      font-size: 12px;
-      margin-left: 16px;
-      margin-bottom: 4px;
-    }
-    .kit-list li {
-      margin-bottom: 2px;
-    }
-    .free-tag {
-      font-size: 12px;
-      color: var(--success);
-      margin-top: 4px;
-    }
-
-    /* Mayilai */
-    .highlight-card {
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 245, 255, 0.98));
-      border-radius: 16px;
-      padding: 14px;
-      border: 1px dashed rgba(242, 195, 230, 0.9);
-      box-shadow: 0 18px 40px rgba(84, 31, 77, 0.18);
-    }
-    .limited-tag {
-      display: inline-block;
-      font-size: 11px;
-      background: #fff0f0;
-      color: var(--danger);
-      border-radius: 999px;
-      padding: 3px 8px;
-      margin-top: 6px;
-      margin-bottom: 8px;
-    }
-    /* Mayilai kit size */
-    #mayilai .highlight-card {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    #mayilai .card-img-scroll img {
-      width: 48%;
-    }
-
-    /* Cart Drawer */
-    .cart-drawer-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(17, 6, 22, 0.45);
-      display: none;
-      justify-content: flex-end;
-      z-index: 30;
-    }
-    .cart-drawer {
-      width: 390px;
-      max-width: 100%;
-      background: radial-gradient(circle at top left, #fff7ff 0, #fff 32%, #fdf4ff 80%);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      box-shadow: -18px 0 40px rgba(33, 9, 29, 0.4);
-    }
-    .cart-header {
-      padding: 12px 14px;
-      border-bottom: 1px solid rgba(240, 225, 245, 0.9);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .cart-title {
-      font-size: 16px;
-      font-weight: 600;
-    }
-    .cart-close {
-      border: none;
-      background: transparent;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    .cart-body {
-      padding: 10px 14px;
-      flex: 1;
-      overflow-y: auto;
-      font-size: 13px;
-    }
-    .cart-empty {
-      text-align: center;
-      color: var(--muted);
-      margin-top: 40px;
-      font-size: 13px;
-    }
-    .cart-item {
-      border-bottom: 1px solid rgba(244, 226, 245, 0.96);
-      padding: 8px 0;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .cart-item-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 6px;
-    }
-    .cart-item-name {
-      font-weight: 600;
-    }
-    .cart-item-meta {
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .cart-item-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 4px;
-    }
-    .cart-item-qty button {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      border: 1px solid rgba(226, 193, 234, 0.96);
-      background: rgba(253, 245, 255, 0.96);
-      font-size: 14px;
-    }
-    .cart-item-qty span {
-      margin: 0 6px;
-    }
-    .cart-remove {
-      border: none;
-      background: transparent;
-      color: var(--danger);
-      font-size: 12px;
-    }
-    .cart-footer {
-      padding: 10px 14px 14px;
-      border-top: 1px solid rgba(240, 225, 245, 0.9);
-      font-size: 13px;
-      background: rgba(255, 250, 255, 0.98);
-    }
-    .cart-line {
-      display: flex;
-      justify-content: space-between;
-      margin: 3px 0;
-    }
-    .cart-total {
-      font-weight: 700;
-      margin-top: 4px;
-    }
-    .shipping-note {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-    .location-row {
-      margin-top: 8px;
-      margin-bottom: 6px;
-    }
-    .location-row label {
-      font-size: 12px;
-      display: block;
-      margin-bottom: 4px;
-    }
-    .location-select {
-      width: 100%;
-      border-radius: 8px;
-      border: 1px solid rgba(234, 200, 240, 0.96);
-      padding: 6px 8px;
-      font-size: 12px;
-      background: rgba(255, 255, 255, 0.98);
-    }
-
-    /* Details & Payment */
-    .details-section {
-      margin-top: 10px;
-      padding-top: 8px;
-      border-top: 1px solid rgba(241, 221, 246, 0.96);
-    }
-    .details-section h4 {
-      font-size: 13px;
-      margin-bottom: 6px;
-      color: var(--primary-dark);
-    }
-    .form-field {
-      margin-bottom: 6px;
-    }
-    .form-field label {
-      font-size: 12px;
-      display: block;
-      margin-bottom: 2px;
-    }
-    .form-field input,
-    .form-field textarea {
-      width: 100%;
-      border-radius: 6px;
-      border: 1px solid rgba(226, 193, 234, 0.96);
-      padding: 6px 8px;
-      font-size: 12px;
-      resize: vertical;
-      background: rgba(255, 255, 255, 0.98);
-    }
-    .form-field textarea {
-      min-height: 50px;
-    }
-    .payment-options {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 4px;
-      font-size: 12px;
-    }
-    .payment-options label {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      cursor: pointer;
-    }
-    .upi-info {
-      font-size: 11px;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-    .upi-placeholder,
-    .qr-placeholder {
-      font-size: 11px;
-      padding: 4px 6px;
-      border-radius: 6px;
-      border: 1px dashed rgba(226, 193, 234, 0.96);
-      background: rgba(255, 246, 255, 0.96);
-      margin-bottom: 4px;
-    }
-    .qr-placeholder {
-      text-align: center;
-    }
-    .btn-checkout {
-      margin-top: 8px;
-      width: 100%;
-      border-radius: 999px;
-      border: none;
-      padding: 9px 12px;
-      font-size: 14px;
-      background: linear-gradient(135deg, #7b1f5b, #b23c7d);
-      color: white;
-      box-shadow: 0 10px 26px rgba(123, 31, 91, 0.35);
-    }
-    .btn-checkout:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 16px;
-      padding: 16px 0 24px;
-      border-top: 1px solid rgba(241, 217, 241, 0.96);
-      font-size: 12px;
-      color: var(--muted);
-      background: radial-gradient(circle at bottom right, #fff5ff 0, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0.95) 100%);
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1.2fr;
-      gap: 16px;
-    }
-    .footer-title {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: var(--primary-dark);
-    }
-    .footer-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 4px;
-      color: #116e3e;
-    }
-    .heart { color: #e74c3c; }
-
-    /* Responsive */
-    @media (max-width: 900px) {
+      /* Hero */
       .hero {
-        grid-template-columns: minmax(0, 1fr);
+        padding: 26px 0 24px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+        gap: 28px;
+        align-items: center;
       }
-      .products-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        color: var(--primary-dark);
+        border: 1px solid rgba(244, 196, 234, 0.8);
+        margin-bottom: 10px;
+        box-shadow: 0 6px 16px rgba(133, 76, 125, 0.12);
       }
-      .kits-grid {
-        grid-template-columns: minmax(0, 1fr);
+      .hero-title {
+        font-size: 30px;
+        font-weight: 750;
+        margin-bottom: 8px;
+        letter-spacing: 0.01em;
+        color: #3b1532;
       }
-    }
-    @media (max-width: 700px) {
-      .footer-grid {
-        grid-template-columns: minmax(0, 1fr);
+      .hero-sub {
+        font-size: 14px;
+        color: var(--muted);
+        margin-bottom: 18px;
+        max-width: 460px;
       }
-    }
-    @media (max-width: 600px) {
-      .nav-links { display: none; }
-      .products-grid { grid-template-columns: minmax(0, 1fr); }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <div class="nav-left">
-        <div class="brand-logo">
-          <img src="img/logo.png" alt="Nilaa Stores Logo" />
-        </div>
-        <div class="brand">
-          <span class="brand-title">Nilaa Stores</span>
-          <span class="brand-sub">World's First & Only A‑Z Saree Draping Essentials Store</span>
-        </div>
-      </div>
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#kits">Draping Kits</a>
-        <a href="#mayilai">Mayilai Kit</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="cart-button" id="openCartBtn">
-        <span>Your Cart</span>
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
-    </div>
-  </header>
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+      .btn-primary {
+        background: linear-gradient(135deg, #7b1f5b, #b23c7d);
+        color: white;
+        border-radius: 999px;
+        border: none;
+        padding: 9px 16px;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 10px 24px rgba(123, 31, 91, 0.35);
+      }
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.9);
+        color: var(--primary-dark);
+        border-radius: 999px;
+        border: 1px solid rgba(242, 202, 255, 0.9);
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+      .btn-whatsapp {
+        background: linear-gradient(135deg, #22c35e, #128c7e);
+        color: white;
+        border-radius: 999px;
+        border: none;
+        padding: 9px 16px;
+        font-size: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 10px 24px rgba(18, 140, 126, 0.35);
+      }
+      .whatsapp-icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 2px solid white;
+        display: inline-block;
+        background: #128c7e;
+      }
+      .hero-note {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .hero-right {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .hero-image-wrapper {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(242, 215, 242, 0.9);
+        box-shadow: 0 26px 60px rgba(113, 36, 94, 0.35);
+        background: radial-gradient(
+          circle at top left,
+          #fff3ff 0,
+          #f8e3ff 40%,
+          #f2dafb 90%
+        );
+      }
+      .hero-card {
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 12px 14px;
+        border: 1px solid var(--border-soft);
+        font-size: 13px;
+        box-shadow: 0 16px 38px rgba(88, 33, 78, 0.18);
+      }
+      .hero-card h3 {
+        font-size: 15px;
+        margin-bottom: 6px;
+        color: var(--primary-dark);
+      }
+      .hero-card ul {
+        margin-left: 16px;
+        margin-bottom: 8px;
+      }
+      .hero-card li {
+        margin-bottom: 4px;
+      }
+      .small-note {
+        font-size: 11px;
+        color: var(--muted);
+      }
 
-  <main id="home">
-    <section class="container hero">
-      <div>
-        <div class="badge">
-          <span>WORLD'S FIRST & ONLY</span>
+      /* Sections */
+      section {
+        padding: 24px 0;
+      }
+      section h2 {
+        font-size: 20px;
+        margin-bottom: 8px;
+        color: #3b1532;
+      }
+      section p.section-sub {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 16px;
+        max-width: 640px;
+      }
+
+      /* Filters */
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+      .filter-pill {
+        border-radius: 999px;
+        border: 1px solid rgba(240, 204, 236, 0.8);
+        padding: 5px 12px;
+        font-size: 12px;
+        background: rgba(255, 255, 255, 0.9);
+        cursor: pointer;
+        color: #5a3157;
+      }
+      .filter-pill.active {
+        background: linear-gradient(135deg, #f7d7ff, #f2c4ff);
+        border-color: var(--primary);
+        color: var(--primary-dark);
+        font-weight: 600;
+        box-shadow: 0 6px 16px rgba(133, 76, 125, 0.25);
+      }
+
+      /* Products */
+      .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .card {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.98),
+          rgba(255, 245, 255, 0.98)
+        );
+        border-radius: 16px;
+        padding: 10px;
+        border: 1px solid var(--border-soft);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 8px;
+        box-shadow: 0 18px 40px rgba(84, 31, 77, 0.18);
+      }
+      .card-img {
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 6px;
+        background: radial-gradient(
+          circle at top,
+          #fff8ff 0,
+          #f7e9ff 40%,
+          #f3e3ff 100%
+        );
+      }
+      .card-img-scroll {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding: 4px;
+      }
+      .card-img-scroll img {
+        flex: 0 0 auto;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 0 6px 16px rgba(120, 40, 97, 0.18);
+      }
+      .card-badge {
+        font-size: 11px;
+        color: #b8721b;
+        background: #fff7e1;
+        border-radius: 999px;
+        padding: 2px 8px;
+        display: inline-block;
+        margin-bottom: 4px;
+      }
+      .card-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 2px;
+        color: #3d1635;
+      }
+      .card-desc {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .options-select {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid rgba(237, 208, 243, 0.9);
+        padding: 6px 8px;
+        font-size: 12px;
+        margin-bottom: 6px;
+        background: rgba(255, 255, 255, 0.96);
+      }
+      .price-line {
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #4c1c40;
+      }
+      .qty-row {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        margin-bottom: 6px;
+      }
+      .qty-row button {
+        width: 26px;
+        height: 26px;
+        border-radius: 999px;
+        border: 1px solid rgba(226, 193, 234, 0.9);
+        background: rgba(253, 245, 255, 0.96);
+        font-size: 16px;
+        line-height: 1;
+      }
+      .qty-value {
+        min-width: 24px;
+        text-align: center;
+        font-size: 13px;
+      }
+      .btn-add {
+        background: linear-gradient(135deg, #7b1f5b, #b23c7d);
+        color: white;
+        border-radius: 999px;
+        border: none;
+        padding: 7px 12px;
+        font-size: 12px;
+        width: 100%;
+        box-shadow: 0 10px 24px rgba(123, 31, 91, 0.3);
+      }
+
+      /* Kits */
+      .kits-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .kit-list {
+        font-size: 12px;
+        margin-left: 16px;
+        margin-bottom: 4px;
+      }
+      .kit-list li {
+        margin-bottom: 2px;
+      }
+      .free-tag {
+        font-size: 12px;
+        color: var(--success);
+        margin-top: 4px;
+      }
+
+      /* Mayilai */
+      .highlight-card {
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.98),
+          rgba(255, 245, 255, 0.98)
+        );
+        border-radius: 16px;
+        padding: 14px;
+        border: 1px dashed rgba(242, 195, 230, 0.9);
+        box-shadow: 0 18px 40px rgba(84, 31, 77, 0.18);
+      }
+      .limited-tag {
+        display: inline-block;
+        font-size: 11px;
+        background: #fff0f0;
+        color: var(--danger);
+        border-radius: 999px;
+        padding: 3px 8px;
+        margin-top: 6px;
+        margin-bottom: 8px;
+      }
+      /* Mayilai kit size */
+      #mayilai .highlight-card {
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      #mayilai .card-img-scroll img {
+        width: 48%;
+      }
+
+      /* Cart Drawer */
+      .cart-drawer-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(17, 6, 22, 0.45);
+        display: none;
+        justify-content: flex-end;
+        z-index: 30;
+      }
+      .cart-drawer {
+        width: 390px;
+        max-width: 100%;
+        background: radial-gradient(
+          circle at top left,
+          #fff7ff 0,
+          #fff 32%,
+          #fdf4ff 80%
+        );
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-shadow: -18px 0 40px rgba(33, 9, 29, 0.4);
+      }
+      .cart-header {
+        padding: 12px 14px;
+        border-bottom: 1px solid rgba(240, 225, 245, 0.9);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cart-title {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .cart-close {
+        border: none;
+        background: transparent;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .cart-body {
+        padding: 10px 14px;
+        flex: 1;
+        overflow-y: auto;
+        font-size: 13px;
+      }
+      .cart-empty {
+        text-align: center;
+        color: var(--muted);
+        margin-top: 40px;
+        font-size: 13px;
+      }
+      .cart-item {
+        border-bottom: 1px solid rgba(244, 226, 245, 0.96);
+        padding: 8px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .cart-item-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 6px;
+      }
+      .cart-item-name {
+        font-weight: 600;
+      }
+      .cart-item-meta {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .cart-item-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 4px;
+      }
+      .cart-item-qty button {
+        width: 22px;
+        height: 22px;
+        border-radius: 999px;
+        border: 1px solid rgba(226, 193, 234, 0.96);
+        background: rgba(253, 245, 255, 0.96);
+        font-size: 14px;
+      }
+      .cart-item-qty span {
+        margin: 0 6px;
+      }
+      .cart-remove {
+        border: none;
+        background: transparent;
+        color: var(--danger);
+        font-size: 12px;
+      }
+      .cart-footer {
+        padding: 10px 14px 14px;
+        border-top: 1px solid rgba(240, 225, 245, 0.9);
+        font-size: 13px;
+        background: rgba(255, 250, 255, 0.98);
+      }
+      .cart-line {
+        display: flex;
+        justify-content: space-between;
+        margin: 3px 0;
+      }
+      .cart-total {
+        font-weight: 700;
+        margin-top: 4px;
+      }
+      .shipping-note {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+      .location-row {
+        margin-top: 8px;
+        margin-bottom: 6px;
+      }
+      .location-row label {
+        font-size: 12px;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .location-select {
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid rgba(234, 200, 240, 0.96);
+        padding: 6px 8px;
+        font-size: 12px;
+        background: rgba(255, 255, 255, 0.98);
+      }
+
+      /* Details & Payment */
+      .details-section {
+        margin-top: 10px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(241, 221, 246, 0.96);
+      }
+      .details-section h4 {
+        font-size: 13px;
+        margin-bottom: 6px;
+        color: var(--primary-dark);
+      }
+      .form-field {
+        margin-bottom: 6px;
+      }
+      .form-field label {
+        font-size: 12px;
+        display: block;
+        margin-bottom: 2px;
+      }
+      .form-field input,
+      .form-field textarea {
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid rgba(226, 193, 234, 0.96);
+        padding: 6px 8px;
+        font-size: 12px;
+        resize: vertical;
+        background: rgba(255, 255, 255, 0.98);
+      }
+      .form-field textarea {
+        min-height: 50px;
+      }
+      .payment-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 4px;
+        font-size: 12px;
+      }
+      .payment-options label {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+      }
+      .upi-info {
+        font-size: 11px;
+        color: var(--muted);
+        margin-bottom: 4px;
+      }
+      .upi-placeholder,
+      .qr-placeholder {
+        font-size: 11px;
+        padding: 4px 6px;
+        border-radius: 6px;
+        border: 1px dashed rgba(226, 193, 234, 0.96);
+        background: rgba(255, 246, 255, 0.96);
+        margin-bottom: 4px;
+      }
+      .qr-placeholder {
+        text-align: center;
+      }
+      .btn-checkout {
+        margin-top: 8px;
+        width: 100%;
+        border-radius: 999px;
+        border: none;
+        padding: 9px 12px;
+        font-size: 14px;
+        background: linear-gradient(135deg, #7b1f5b, #b23c7d);
+        color: white;
+        box-shadow: 0 10px 26px rgba(123, 31, 91, 0.35);
+      }
+      .btn-checkout:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 16px;
+        padding: 16px 0 24px;
+        border-top: 1px solid rgba(241, 217, 241, 0.96);
+        font-size: 12px;
+        color: var(--muted);
+        background: radial-gradient(
+          circle at bottom right,
+          #fff5ff 0,
+          rgba(255, 255, 255, 0.9) 40%,
+          rgba(255, 255, 255, 0.95) 100%
+        );
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1.2fr;
+        gap: 16px;
+      }
+      .footer-title {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: var(--primary-dark);
+      }
+      .footer-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 4px;
+        color: #116e3e;
+      }
+      .heart {
+        color: #e74c3c;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .products-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .kits-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      @media (max-width: 700px) {
+        .footer-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+      @media (max-width: 600px) {
+        .nav-links {
+          display: none;
+        }
+        .products-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="nav-left">
+          <div class="brand-logo">
+            <img src="img/logo.png" alt="Nilaa Stores Logo" />
+          </div>
+          <div class="brand">
+            <span class="brand-title">Nilaa Stores</span>
+            <span class="brand-sub">
+              World's First & Only A‑Z Saree Draping Essentials Store
+            </span>
+          </div>
         </div>
-        <h1 class="hero-title">A‑Z Saree Draping Essentials, all under one roof.</h1>
-        <p class="hero-sub">
-          Everything a saree drapist or makeup artist needs – premium quality, handpicked products with bulk discounts for professionals.
-        </p>
-        <div class="hero-actions">
-          <a href="#products" class="btn-primary">Shop Products</a>
-          <a href="#kits" class="btn-secondary">View Draping Kits</a>
-          <a class="btn-whatsapp" href="https://wa.me/919894436936" target="_blank" rel="noopener">
-            <span class="whatsapp-icon"></span>
-            <span>Order on WhatsApp</span>
-          </a>
-        </div>
-        <p class="hero-note">
-          Proudly originated in Tamil Nadu, India. Bulk & bridal orders welcomed.
-        </p>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#kits">Draping Kits</a>
+          <a href="#mayilai">Mayilai Kit</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="cart-button" id="openCartBtn">
+          <span>Your Cart</span>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
       </div>
-      <div class="hero-right">
-        <div class="hero-image-wrapper">
-          <img src="img/hero-image.jpg" alt="Nilaa Stores Saree Draping Essentials" />
-        </div>
-        <div class="hero-card">
-          <h3>Why Nilaa Stores?</h3>
-          <ul>
-            <li>Everything your saree needs, in one place.</li>
-            <li>Thoughtfully chosen essentials.</li>
-            <li>Practical for everyday use.</li>
-            <li>Trusted by professionals & everyday users.</li>
-            <li>Designed for comfort, hold & finish.</li>
-          </ul>
-          <p class="small-note">
-            Prefer WhatsApp orders? Message <strong>98944 36936</strong> with your product list and location for quick order confirmation.
+    </header>
+
+    <main id="home">
+      <section class="container hero">
+        <div>
+          <div class="badge">
+            <span>WORLD'S FIRST & ONLY</span>
+          </div>
+          <h1 class="hero-title">
+            A‑Z Saree Draping Essentials, all under one roof.
+          </h1>
+          <p class="hero-sub">
+            Everything a saree drapist or makeup artist needs – premium quality,
+            handpicked products with bulk discounts for professionals.
+          </p>
+          <div class="hero-actions">
+            <a href="#products" class="btn-primary">Shop Products</a>
+            <a href="#kits" class="btn-secondary">View Draping Kits</a>
+            <a
+              class="btn-whatsapp"
+              href="https://wa.me/919894436936"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="whatsapp-icon"></span>
+              <span>Order on WhatsApp</span>
+            </a>
+          </div>
+          <p class="hero-note">
+            Proudly originated in Tamil Nadu, India. Bulk & bridal orders
+            welcomed.
           </p>
         </div>
-      </div>
-    </section>
-
-    <!-- Products -->
-    <section class="container" id="products">
-      <h2>Premium Saree Draping Essentials</h2>
-      <p class="section-sub">
-        Handpicked quality products at affordable prices. Bulk discounts available for professional drapists and makeup artists.
-      </p>
-
-      <div class="filters">
-        <button class="filter-pill active" data-filter="all">All Products</button>
-        <button class="filter-pill" data-filter="Packing Covers">Packing Covers</button>
-        <button class="filter-pill" data-filter="Safety Pins">Safety Pins</button>
-        <button class="filter-pill" data-filter="Accessories">Accessories</button>
-      </div>
-
-      <div class="products-grid" id="productsGrid">
-        <!-- 14x18 Covers -->
-        <div class="card" data-category="Packing Covers">
-          <div>
-            <div class="card-img">
-              <div class="card-img-scroll">
-                <img src="img/product-covers-14x18-1.jpg" alt="Saree Packing Covers 14x18 front" />
-                <img src="img/product-covers-14x18-2.jpg" alt="Saree Packing Covers 14x18 stack" />
-              </div>
-            </div>
-            <span class="card-badge">Best Seller</span>
-            <div class="card-title">Saree Packing Covers (14×18)</div>
-            <div class="card-desc">Premium quality transparent saree packing covers.</div>
-            <select class="options-select" data-product-id="covers_14x18">
-              <option value="20|120">20 pieces - ₹120 (₹6/pc)</option>
-              <option value="50|250">50 pieces - ₹250 (₹5/pc)</option>
-              <option value="100|380">100 pieces - ₹380 (₹3.8/pc)</option>
-            </select>
-            <div class="price-line" data-price-label="covers_14x18">₹120 (₹6/pc)</div>
+        <div class="hero-right">
+          <div class="hero-image-wrapper">
+            <img
+              src="img/hero-image.jpg"
+              alt="Nilaa Stores Saree Draping Essentials"
+            />
           </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="covers_14x18">-</button>
-              <span class="qty-value" id="qty_covers_14x18">1</span>
-              <button type="button" data-qty-inc="covers_14x18">+</button>
-            </div>
-            <button class="btn-add" data-add="covers_14x18">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- 16x20 Covers -->
-        <div class="card" data-category="Packing Covers">
-          <div>
-            <div class="card-img">
-              <div class="card-img-scroll">
-                <img src="img/product-covers-16x20-1.jpg" alt="Saree Packing Covers 16x20 front" />
-                <img src="img/product-covers-16x20-2.jpg" alt="Saree Packing Covers 16x20 stack" />
-              </div>
-            </div>
-            <div class="card-title">Saree Packing Covers (16×20)</div>
-            <div class="card-desc">Large size premium transparent saree packing covers.</div>
-            <select class="options-select" data-product-id="covers_16x20">
-              <option value="20|200">20 pieces - ₹200 (₹10/pc)</option>
-              <option value="50|350">50 pieces - ₹350 (₹7/pc)</option>
-              <option value="100|470">100 pieces - ₹470 (₹4.7/pc)</option>
-            </select>
-            <div class="price-line" data-price-label="covers_16x20">₹200 (₹10/pc)</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="covers_16x20">-</button>
-              <span class="qty-value" id="qty_covers_16x20">1</span>
-              <button type="button" data-qty-inc="covers_16x20">+</button>
-            </div>
-            <button class="btn-add" data-add="covers_16x20">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Hanger Cover -->
-        <div class="card" data-category="Packing Covers">
-          <div>
-            <div class="card-img">
-              <div class="card-img-scroll">
-                <img src="img/product-hanger-cover-1.jpg" alt="Hanger Cover hanging" />
-                <img src="img/product-hanger-cover-2.jpg" alt="Hanger Cover close-up" />
-                <img src="img/product-hanger-cover-3.jpg" alt="Hanger Cover close-up" />
-              </div>
-            </div>
-            <div class="card-title">Hanger Cover (35.4×23.6")</div>
-            <div class="card-desc">Premium quality with top‑open design for easy access.</div>
-            <select class="options-select" data-product-id="hanger_cover">
-              <option value="5|175">5 piece - ₹175 (₹35/pc)</option>
-              <option value="20|600">20 pieces - ₹600 (₹30/pc)</option>
-            </select>
-            <div class="price-line" data-price-label="hanger_cover">₹35 (₹35/pc)</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="hanger_cover">-</button>
-              <span class="qty-value" id="qty_hanger_cover">1</span>
-              <button type="button" data-qty-inc="hanger_cover">+</button>
-            </div>
-            <button class="btn-add" data-add="hanger_cover">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Safety Pins size 0 -->
-        <div class="card" data-category="Safety Pins">
-          <div>
-            <div class="card-img">
-              <img src="img/product-pins-0.jpg" alt="Safety Pins Size 0" />
-            </div>
-            <span class="card-badge">Essential</span>
-            <div class="card-title">Safety Pins (Size 0)</div>
-            <div class="card-desc">High‑quality safety pins for perfect saree draping.</div>
-            <select class="options-select" data-product-id="pins_0">
-              <option value="100|80">100 pieces - ₹80 (₹0.8/pc)</option>
-              <option value="250|130">250 pieces - ₹130 (₹0.52/pc)</option>
-              <option value="500|200">500 pieces - ₹200 (₹0.4/pc)</option>
-              <option value="1000|300">1000 pieces - ₹300 (₹0.3/pc)</option>
-            </select>
-            <div class="price-line" data-price-label="pins_0">₹80 (₹0.8/pc)</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="pins_0">-</button>
-              <span class="qty-value" id="qty_pins_0">1</span>
-              <button type="button" data-qty-inc="pins_0">+</button>
-            </div>
-            <button class="btn-add" data-add="pins_0">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Safety Pins size 1 -->
-        <div class="card" data-category="Safety Pins">
-          <div>
-            <div class="card-img">
-              <img src="img/product-pins-1.jpg" alt="Safety Pins Size 1" />
-            </div>
-            <div class="card-title">Safety Pins (Size 1)</div>
-            <div class="card-desc">Large size safety pins for heavy sarees.</div>
-            <select class="options-select" data-product-id="pins_1">
-              <option value="100|100">100 pieces - ₹100 (₹1/pc)</option>
-              <option value="250|150">250 pieces - ₹150 (₹0.6/pc)</option>
-              <option value="500|250">500 pieces - ₹250 (₹0.5/pc)</option>
-              <option value="1000|400">1000 pieces - ₹400 (₹0.4/pc)</option>
-            </select>
-            <div class="price-line" data-price-label="pins_1">₹100 (₹1/pc)</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="pins_1">-</button>
-              <span class="qty-value" id="qty_pins_1">1</span>
-              <button type="button" data-qty-inc="pins_1">+</button>
-            </div>
-            <button class="btn-add" data-add="pins_1">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Storage Box -->
-        <div class="card" data-category="Accessories">
-          <div>
-            <div class="card-img">
-              <img src="img/product-storage-box.jpg" alt="Storage Box" />
-            </div>
-            <div class="card-title">Storage Box (6 Compartment)</div>
-            <div class="card-desc">Sturdy storage box for organizing draping essentials.</div>
-            <div class="price-line">₹65</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="storage_box">-</button>
-              <span class="qty-value" id="qty_storage_box">1</span>
-              <button type="button" data-qty-inc="storage_box">+</button>
-            </div>
-            <button class="btn-add" data-add="storage_box" data-price="65">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Wooden Hanger -->
-        <div class="card" data-category="Accessories">
-          <div>
-            <div class="card-img">
-              <div class="card-img-scroll">
-                <img src="img/product-wooden-hanger-1.jpg" alt="Wooden hanger front" />
-                <img src="img/product-wooden-hanger-2.jpg" alt="Wooden hanger side" />
-                <img src="img/product-wooden-hanger-3.jpg" alt="Wooden hanger with saree" />
-              </div>
-            </div>
-            <div class="card-title">Wooden Hanger</div>
-            <div class="card-desc">Premium wooden hanger for sarees.</div>
-            <div class="price-line">₹65</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="wooden_hanger">-</button>
-              <span class="qty-value" id="qty_wooden_hanger">1</span>
-              <button type="button" data-qty-inc="wooden_hanger">+</button>
-            </div>
-            <button class="btn-add" data-add="wooden_hanger" data-price="65">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Iron Protection Mat -->
-        <div class="card" data-category="Accessories">
-          <div>
-            <div class="card-img">
-              <img src="img/product-iron-mat.jpg" alt="Iron Protection Mat" />
-            </div>
-            <div class="card-title">Iron Protection Mat</div>
-            <div class="card-desc">Heat‑resistant mat for safe ironing.</div>
-            <div class="price-line">₹80</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="iron_mat">-</button>
-              <span class="qty-value" id="qty_iron_mat">1</span>
-              <button type="button" data-qty-inc="iron_mat">+</button>
-            </div>
-            <button class="btn-add" data-add="iron_mat" data-price="80">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Saree Pegs -->
-        <div class="card" data-category="Accessories">
-          <div>
-            <div class="card-img">
-              <img src="img/product-saree-pegs.jpg" alt="Saree Pegs" />
-            </div>
-            <div class="card-title">Saree Pegs (Big)</div>
-            <div class="card-desc">Specialized pegs for holding pleats in place.</div>
-            <div class="price-line">₹50</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="saree_pegs">-</button>
-              <span class="qty-value" id="qty_saree_pegs">1</span>
-              <button type="button" data-qty-inc="saree_pegs">+</button>
-            </div>
-            <button class="btn-add" data-add="saree_pegs" data-price="50">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Inch Tape -->
-        <div class="card" data-category="Accessories">
-          <div>
-            <div class="card-img">
-              <img src="img/product-inch-tape.jpg" alt="Inch Tape" />
-            </div>
-            <div class="card-title">Inch Tape</div>
-            <div class="card-desc">Accurate measurement tape for perfect draping.</div>
-            <div class="price-line">₹20</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="inch_tape">-</button>
-              <span class="qty-value" id="qty_inch_tape">1</span>
-              <button type="button" data-qty-inc="inch_tape">+</button>
-            </div>
-            <button class="btn-add" data-add="inch_tape" data-price="20">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Pin Wheel -->
-        <div class="card" data-category="Accessories">
-          <div>
-            <div class="card-img">
-              <img src="img/product-pin-wheel.jpg" alt="Pin Wheel" />
-            </div>
-            <div class="card-title">Pin Wheel</div>
-            <div class="card-desc">Ball head pins to hold pleats on place</div>
-            <div class="price-line">₹20</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="pin_wheel">-</button>
-              <span class="qty-value" id="qty_pin_wheel">1</span>
-              <button type="button" data-qty-inc="pin_wheel">+</button>
-            </div>
-            <button class="btn-add" data-add="pin_wheel" data-price="20">Add to Cart</button>
-          </div>
-        </div>
-
-        <!-- Cloth/Body Tape -->
-        <div class="card" data-category="Accessories">
-          <div>
-            <div class="card-img">
-              <img src="img/product-cloth-tape.jpg" alt="Cloth Body Tape" />
-            </div>
-            <div class="card-title">Cloth/Body Tape</div>
-            <div class="card-desc">Double‑sided tape for secure draping.</div>
-            <select class="options-select" data-product-id="cloth_tape">
-              <option value="10|20">10 pieces - ₹20 (₹2/pc)</option>
-              <option value="20|40">20 pieces - ₹40 (₹2/pc)</option>
-            </select>
-            <div class="price-line" data-price-label="cloth_tape">₹20</div>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="cloth_tape">-</button>
-              <span class="qty-value" id="qty_cloth_tape">1</span>
-              <button type="button" data-qty-inc="cloth_tape">+</button>
-            </div>
-            <button class="btn-add" data-add="cloth_tape">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Kits -->
-    <section class="container" id="kits">
-      <h2>Saree Draping Kit by Sandhiya</h2>
-      <p class="section-sub">
-        Perfect kits for every need – from beginners to professionals, carefully curated by professional saree drapist Sandhiya.
-      </p>
-
-      <div class="kits-grid">
-        <!-- MINI kit -->
-        <div class="card">
-          <div>
-            <div class="card-img">
-              <div class="card-img-scroll">
-                <img src="img/kit-mini-1.jpg" alt="Mini draping kit flatlay" />
-              </div>
-            </div>
-            <div class="card-badge">MINI KIT</div>
-            <div class="card-title">MINI Draping Kit – ₹299 + shipping</div>
-            <ul class="kit-list">
-              <li>Saree pegs (big) - 1 no</li>
-              <li>Safety pins (Big) - 50 pins</li>
-              <li>Safety pins (small) - 50 pins</li>
-              <li>Iron protection mat - 1 no</li>
-              <li>Inch tape - 1 no</li>
-              <li>Saree packing covers (14×18) - 10 nos</li>
+          <div class="hero-card">
+            <h3>Why Nilaa Stores?</h3>
+            <ul>
+              <li>
+                Premium saree packing covers, safety pins, pegs, tape and more.
+              </li>
+              <li>
+                Ready‑to‑use draping kits for beginners, pros and brides.
+              </li>
+              <li>
+                Designed by professional saree drapist Sandhiya for real‑world
+                needs.
+              </li>
             </ul>
-            <p class="free-tag">FREE: Safety pin storage box (6 compartment) - 1 no</p>
-            <p class="small-note">All these are packed safely in a secured strong package box.</p>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="mini_kit">-</button>
-              <span class="qty-value" id="qty_mini_kit">1</span>
-              <button type="button" data-qty-inc="mini_kit">+</button>
-            </div>
-            <button class="btn-add" data-add="mini_kit" data-price="299">Add to Cart - ₹299</button>
+            <p class="small-note">
+              Prefer WhatsApp orders? Message <strong>98944 36936</strong> with
+              your product list and location for quick order confirmation.
+            </p>
           </div>
         </div>
+      </section>
 
-        <!-- BASIC kit -->
-        <div class="card">
+      <!-- Products -->
+      <section class="container" id="products">
+        <h2>Premium Saree Draping Essentials</h2>
+        <p class="section-sub">
+          Handpicked quality products at affordable prices. Bulk discounts
+          available for professional drapists and makeup artists.
+        </p>
+
+        <div class="filters">
+          <button class="filter-pill active" data-filter="all">
+            All Products
+          </button>
+          <button class="filter-pill" data-filter="Packing Covers">
+            Packing Covers
+          </button>
+          <button class="filter-pill" data-filter="Safety Pins">
+            Safety Pins
+          </button>
+          <button class="filter-pill" data-filter="Accessories">
+            Accessories
+          </button>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+          <!-- 14x18 Covers -->
+          <div class="card" data-category="Packing Covers">
+            <div>
+              <div class="card-img">
+                <div class="card-img-scroll">
+                  <img
+                    src="img/product-covers-14x18-1.jpg"
+                    alt="Saree Packing Covers 14x18 front"
+                  />
+                  <img
+                    src="img/product-covers-14x18-2.jpg"
+                    alt="Saree Packing Covers 14x18 stack"
+                  />
+                </div>
+              </div>
+              <span class="card-badge">Best Seller</span>
+              <div class="card-title">Saree Packing Covers (14×18)</div>
+              <div class="card-desc">
+                Premium quality transparent saree packing covers.
+              </div>
+              <select class="options-select" data-product-id="covers_14x18">
+                <option value="20|120">20 pieces - ₹120 (₹6/pc)</option>
+                <option value="50|250">50 pieces - ₹250 (₹5/pc)</option>
+                <option value="100|380">100 pieces - ₹380 (₹3.8/pc)</option>
+              </select>
+              <div class="price-line" data-price-label="covers_14x18">
+                ₹120 (₹6/pc)
+              </div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="covers_14x18">-</button>
+                <span class="qty-value" id="qty_covers_14x18">1</span>
+                <button type="button" data-qty-inc="covers_14x18">+</button>
+              </div>
+              <button class="btn-add" data-add="covers_14x18">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- 16x20 Covers -->
+          <div class="card" data-category="Packing Covers">
+            <div>
+              <div class="card-img">
+                <div class="card-img-scroll">
+                  <img
+                    src="img/product-covers-16x20-1.jpg"
+                    alt="Saree Packing Covers 16x20 front"
+                  />
+                  <img
+                    src="img/product-covers-16x20-2.jpg"
+                    alt="Saree Packing Covers 16x20 stack"
+                  />
+                </div>
+              </div>
+              <div class="card-title">Saree Packing Covers (16×20)</div>
+              <div class="card-desc">
+                Large size premium transparent saree packing covers.
+              </div>
+              <select class="options-select" data-product-id="covers_16x20">
+                <option value="20|200">20 pieces - ₹200 (₹10/pc)</option>
+                <option value="50|350">50 pieces - ₹350 (₹7/pc)</option>
+                <option value="100|470">100 pieces - ₹470 (₹4.7/pc)</option>
+              </select>
+              <div class="price-line" data-price-label="covers_16x20">
+                ₹200 (₹10/pc)
+              </div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="covers_16x20">-</button>
+                <span class="qty-value" id="qty_covers_16x20">1</span>
+                <button type="button" data-qty-inc="covers_16x20">+</button>
+              </div>
+              <button class="btn-add" data-add="covers_16x20">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Hanger Cover -->
+          <div class="card" data-category="Packing Covers">
+            <div>
+              <div class="card-img">
+                <div class="card-img-scroll">
+                  <img
+                    src="img/product-hanger-cover-1.jpg"
+                    alt="Hanger Cover hanging"
+                  />
+                  <img
+                    src="img/product-hanger-cover-2.jpg"
+                    alt="Hanger Cover side"
+                  />
+                  <img
+                    src="img/product-hanger-cover-3.jpg"
+                    alt="Hanger Cover close"
+                  />
+                </div>
+              </div>
+              <div class="card-title">Hanger Cover (35.4×23.6")</div>
+              <div class="card-desc">
+                Premium quality with top‑open design for easy access.
+              </div>
+              <select class="options-select" data-product-id="hanger_cover">
+                <option value="1|35">1 piece - ₹35 (₹35/pc)</option>
+                <option value="20|600">20 pieces - ₹600 (₹30/pc)</option>
+              </select>
+              <div class="price-line" data-price-label="hanger_cover">
+                ₹35 (₹35/pc)
+              </div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="hanger_cover">-</button>
+                <span class="qty-value" id="qty_hanger_cover">1</span>
+                <button type="button" data-qty-inc="hanger_cover">+</button>
+              </div>
+              <button class="btn-add" data-add="hanger_cover">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Safety Pins size 0 -->
+          <div class="card" data-category="Safety Pins">
+            <div>
+              <div class="card-img">
+                <img
+                  src="img/product-pins-0.jpg"
+                  alt="Safety Pins Size 0"
+                />
+              </div>
+              <span class="card-badge">Essential</span>
+              <div class="card-title">Safety Pins (Size 0)</div>
+              <div class="card-desc">
+                High‑quality safety pins for perfect saree draping.
+              </div>
+              <select class="options-select" data-product-id="pins_0">
+                <option value="100|80">100 pieces - ₹80 (₹0.8/pc)</option>
+                <option value="250|130">250 pieces - ₹130 (₹0.52/pc)</option>
+                <option value="500|200">500 pieces - ₹200 (₹0.4/pc)</option>
+                <option value="1000|300">1000 pieces - ₹300 (₹0.3/pc)</option>
+              </select>
+              <div class="price-line" data-price-label="pins_0">
+                ₹80 (₹0.8/pc)
+              </div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="pins_0">-</button>
+                <span class="qty-value" id="qty_pins_0">1</span>
+                <button type="button" data-qty-inc="pins_0">+</button>
+              </div>
+              <button class="btn-add" data-add="pins_0">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Safety Pins size 1 -->
+          <div class="card" data-category="Safety Pins">
+            <div>
+              <div class="card-img">
+                <img
+                  src="img/product-pins-1.jpg"
+                  alt="Safety Pins Size 1"
+                />
+              </div>
+              <div class="card-title">Safety Pins (Size 1)</div>
+              <div class="card-desc">
+                Large size safety pins for heavy sarees.
+              </div>
+              <select class="options-select" data-product-id="pins_1">
+                <option value="100|100">100 pieces - ₹100 (₹1/pc)</option>
+                <option value="250|150">250 pieces - ₹150 (₹0.6/pc)</option>
+                <option value="500|250">500 pieces - ₹250 (₹0.5/pc)</option>
+                <option value="1000|400">1000 pieces - ₹400 (₹0.4/pc)</option>
+              </select>
+              <div class="price-line" data-price-label="pins_1">
+                ₹100 (₹1/pc)
+              </div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="pins_1">-</button>
+                <span class="qty-value" id="qty_pins_1">1</span>
+                <button type="button" data-qty-inc="pins_1">+</button>
+              </div>
+              <button class="btn-add" data-add="pins_1">Add to Cart</button>
+            </div>
+          </div>
+
+          <!-- Storage Box -->
+          <div class="card" data-category="Accessories">
+            <div>
+              <div class="card-img">
+                <img
+                  src="img/product-storage-box.jpg"
+                  alt="Storage Box"
+                />
+              </div>
+              <div class="card-title">Storage Box (6 Compartment)</div>
+              <div class="card-desc">
+                Sturdy storage box for organizing draping essentials.
+              </div>
+              <div class="price-line">₹65</div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="storage_box">-</button>
+                <span class="qty-value" id="qty_storage_box">1</span>
+                <button type="button" data-qty-inc="storage_box">+</button>
+              </div>
+              <button
+                class="btn-add"
+                data-add="storage_box"
+                data-price="65"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Wooden Hanger -->
+          <div class="card" data-category="Accessories">
+            <div>
+              <div class="card-img">
+                <div class="card-img-scroll">
+                  <img
+                    src="img/product-wooden-hanger-1.jpg"
+                    alt="Wooden hanger front"
+                  />
+                  <img
+                    src="img/product-wooden-hanger-2.jpg"
+                    alt="Wooden hanger side"
+                  />
+                  <img
+                    src="img/product-wooden-hanger-3.jpg"
+                    alt="Wooden hanger with saree"
+                  />
+                </div>
+              </div>
+              <div class="card-title">Wooden Hanger</div>
+              <div class="card-desc">Premium wooden hanger for sarees.</div>
+              <div class="price-line">₹65</div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="wooden_hanger">-</button>
+                <span class="qty-value" id="qty_wooden_hanger">1</span>
+                <button type="button" data-qty-inc="wooden_hanger">+</button>
+              </div>
+              <button
+                class="btn-add"
+                data-add="wooden_hanger"
+                data-price="65"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Iron Protection Mat -->
+          <div class="card" data-category="Accessories">
+            <div>
+              <div class="card-img">
+                <img
+                  src="img/product-iron-mat.jpg"
+                  alt="Iron Protection Mat"
+                />
+              </div>
+              <div class="card-title">Iron Protection Mat</div>
+              <div class="card-desc">Heat‑resistant mat for safe ironing.</div>
+              <div class="price-line">₹80</div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="iron_mat">-</button>
+                <span class="qty-value" id="qty_iron_mat">1</span>
+                <button type="button" data-qty-inc="iron_mat">+</button>
+              </div>
+              <button class="btn-add" data-add="iron_mat" data-price="80">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Saree Pegs -->
+          <div class="card" data-category="Accessories">
+            <div>
+              <div class="card-img">
+                <img
+                  src="img/product-saree-pegs.jpg"
+                  alt="Saree Pegs"
+                />
+              </div>
+              <div class="card-title">Saree Pegs (Big)</div>
+              <div class="card-desc">
+                Specialized pegs for holding pleats in place.
+              </div>
+              <div class="price-line">₹50</div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="saree_pegs">-</button>
+                <span class="qty-value" id="qty_saree_pegs">1</span>
+                <button type="button" data-qty-inc="saree_pegs">+</button>
+              </div>
+              <button class="btn-add" data-add="saree_pegs" data-price="50">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Inch Tape -->
+          <div class="card" data-category="Accessories">
+            <div>
+              <div class="card-img">
+                <img
+                  src="img/product-inch-tape.jpg"
+                  alt="Inch Tape"
+                />
+              </div>
+              <div class="card-title">Inch Tape</div>
+              <div class="card-desc">
+                Accurate measurement tape for perfect draping.
+              </div>
+              <div class="price-line">₹20</div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="inch_tape">-</button>
+                <span class="qty-value" id="qty_inch_tape">1</span>
+                <button type="button" data-qty-inc="inch_tape">+</button>
+              </div>
+              <button class="btn-add" data-add="inch_tape" data-price="20">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Pin Wheel -->
+          <div class="card" data-category="Accessories">
+            <div>
+              <div class="card-img">
+                <img
+                  src="img/product-pin-wheel.jpg"
+                  alt="Pin Wheel"
+                />
+              </div>
+              <div class="card-title">Pin Wheel</div>
+              <div class="card-desc">
+                Ball head pin wheel for decorative draping.
+              </div>
+              <div class="price-line">₹20</div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="pin_wheel">-</button>
+                <span class="qty-value" id="qty_pin_wheel">1</span>
+                <button type="button" data-qty-inc="pin_wheel">+</button>
+              </div>
+              <button class="btn-add" data-add="pin_wheel" data-price="20">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+
+          <!-- Cloth/Body Tape -->
+          <div class="card" data-category="Accessories">
+            <div>
+              <div class="card-img">
+                <img
+                  src="img/product-cloth-tape.jpg"
+                  alt="Cloth Body Tape"
+                />
+              </div>
+              <div class="card-title">Cloth/Body Tape</div>
+              <div class="card-desc">Double‑sided tape for secure draping.</div>
+              <select class="options-select" data-product-id="cloth_tape">
+                <option value="10|20">10 pieces - ₹20 (₹2/pc)</option>
+                <option value="20|40">20 pieces - ₹40 (₹2/pc)</option>
+              </select>
+              <div class="price-line" data-price-label="cloth_tape">₹20</div>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="cloth_tape">-</button>
+                <span class="qty-value" id="qty_cloth_tape">1</span>
+                <button type="button" data-qty-inc="cloth_tape">+</button>
+              </div>
+              <button class="btn-add" data-add="cloth_tape">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kits -->
+      <section class="container" id="kits">
+        <h2>Saree Draping Kit by Sandhiya</h2>
+        <p class="section-sub">
+          Perfect kits for every need – from beginners to professionals,
+          carefully curated by professional saree drapist Sandhiya.
+        </p>
+
+        <div class="kits-grid">
+          <!-- MINI kit -->
+          <div class="card">
+            <div>
+              <div class="card-img">
+                <div class="card-img-scroll">
+                  <img
+                    src="img/kit-mini-1.jpg"
+                    alt="Mini draping kit flatlay"
+                  />
+                </div>
+              </div>
+              <div class="card-badge">MINI KIT</div>
+              <div class="card-title">
+                MINI Draping Kit – ₹299 + shipping
+              </div>
+              <ul class="kit-list">
+                <li>Saree pegs (big) - 1 no</li>
+                <li>Safety pins (Big) - 50 pins</li>
+                <li>Safety pins (small) - 50 pins</li>
+                <li>Iron protection mat - 1 no</li>
+                <li>Inch tape - 1 no</li>
+                <li>Saree packing covers (14×18) - 10 nos</li>
+              </ul>
+              <p class="free-tag">
+                FREE: Safety pin storage box (6 compartment) - 1 no
+              </p>
+              <p class="small-note">
+                All these are packed safely in a secured strong package box.
+              </p>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="mini_kit">-</button>
+                <span class="qty-value" id="qty_mini_kit">1</span>
+                <button type="button" data-qty-inc="mini_kit">+</button>
+              </div>
+              <button class="btn-add" data-add="mini_kit" data-price="299">
+                Add to Cart - ₹299
+              </button>
+            </div>
+          </div>
+
+          <!-- BASIC kit -->
+          <div class="card">
+            <div>
+              <div class="card-img">
+                <div class="card-img-scroll">
+                  <img
+                    src="img/kit-basic-1.jpg"
+                    alt="Basic draping kit flatlay"
+                  />
+                  <img
+                    src="img/kit-basic-2.jpg"
+                    alt="Basic draping kit contents"
+                  />
+                </div>
+              </div>
+              <div class="card-badge">BASIC KIT</div>
+              <div class="card-title">
+                BASIC Draping Kit – ₹450 + shipping
+              </div>
+              <ul class="kit-list">
+                <li>Saree pegs (big) - 2 nos</li>
+                <li>Safety pins (Big) - 100 pins</li>
+                <li>Safety pins (small) - 100 pins</li>
+                <li>Ball head pin wheel - 1 no (40 pins)</li>
+                <li>Iron protection mat - 1 no</li>
+                <li>Inch tape - 1 no</li>
+                <li>Saree packing covers (14×18) - 10 nos</li>
+                <li>Cloth tape - 10 nos</li>
+              </ul>
+              <p class="free-tag">
+                FREE: Safety pin storage box (6 compartment) - 1 no
+              </p>
+              <p class="small-note">
+                Packed securely in a strong package box.
+              </p>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="basic_kit">-</button>
+                <span class="qty-value" id="qty_basic_kit">1</span>
+                <button type="button" data-qty-inc="basic_kit">+</button>
+              </div>
+              <button class="btn-add" data-add="basic_kit" data-price="450">
+                Add to Cart - ₹450
+              </button>
+            </div>
+          </div>
+
+          <!-- PRO kit -->
+          <div class="card">
+            <div>
+              <div class="card-img">
+                <div class="card-img-scroll">
+                  <img
+                    src="img/kit-pro-1.jpg"
+                    alt="Professional draping kit flatlay"
+                  />
+                  <img
+                    src="img/kit-pro-2.jpg"
+                    alt="Professional draping kit contents"
+                  />
+                  <img
+                    src="img/kit-pro-3.jpg"
+                    alt="Professional draping kit packed"
+                  />
+                  <img
+                    src="img/kit-pro-4.jpg"
+                    alt="Professional draping kit flatlay"
+                  />
+                </div>
+              </div>
+              <div class="card-badge">PROFESSIONAL KIT</div>
+              <div class="card-title">
+                PROFESSIONAL Draping Kit – ₹1599 + shipping
+              </div>
+              <ul class="kit-list">
+                <li>Saree pegs (big) - 2 nos</li>
+                <li>Safety pins (Big) - 1000 pins</li>
+                <li>Safety pins (small) - 1000 pins</li>
+                <li>Ball head pin wheel - 1 no (40 pins)</li>
+                <li>Iron protection mat - 1 no</li>
+                <li>Inch tape - 1 no</li>
+                <li>Saree packing covers (14×18) - 50 nos</li>
+                <li>Cloth tape - 20 nos</li>
+                <li>Six compartment storage box - 1 no</li>
+                <li>Wooden hanger - 2 nos</li>
+                <li>Hanger cover - 10 nos</li>
+              </ul>
+              <p class="small-note">
+                Packed safely in a secured strong package box.
+              </p>
+            </div>
+            <div>
+              <div class="qty-row">
+                <button type="button" data-qty-dec="pro_kit">-</button>
+                <span class="qty-value" id="qty_pro_kit">1</span>
+                <button type="button" data-qty-inc="pro_kit">+</button>
+              </div>
+              <button class="btn-add" data-add="pro_kit" data-price="1599">
+                Add to Cart - ₹1599
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mayilai Touch-Up Kit -->
+      <section class="container" id="mayilai">
+        <h2>Mayilai Touch‑Up Kit (Bridal Emergency Kit)</h2>
+        <p class="section-sub">
+          Perfect mini kit for brides and makeup artists – quick touch‑ups for
+          last‑minute saree and makeup fixes.
+        </p>
+
+        <div class="card highlight-card">
           <div>
             <div class="card-img">
               <div class="card-img-scroll">
-                <img src="img/kit-basic-1.jpg" alt="Basic draping kit flatlay" />
-                <img src="img/kit-basic-2.jpg" alt="Basic draping kit contents" />
+                <img
+                  src="img/kit-mayilai-1.jpg"
+                  alt="Mayilai Touch-Up Kit flatlay"
+                  style="width: 42%"
+                />
+                <img
+                  src="img/kit-mayilai-2.jpg"
+                  alt="Mayilai Touch-Up Kit contents"
+                  style="width: 42%"
+                />
               </div>
             </div>
-            <div class="card-badge">BASIC KIT</div>
-            <div class="card-title">BASIC Draping Kit – ₹450 + shipping</div>
-            <ul class="kit-list">
-              <li>Saree pegs (big) - 2 nos</li>
-              <li>Safety pins (Big) - 100 pins</li>
-              <li>Safety pins (small) - 100 pins</li>
-              <li>Ball head pin wheel - 1 no (40 pins)</li>
-              <li>Iron protection mat - 1 no</li>
-              <li>Inch tape - 1 no</li>
-              <li>Saree packing covers (14×18) - 10 nos</li>
-              <li>Cloth tape - 10 nos</li>
-            </ul>
-            <p class="free-tag">FREE: Safety pin storage box (6 compartment) - 1 no</p>
-            <p class="small-note">Packed securely in a strong package box.</p>
-          </div>
-          <div>
-            <div class="qty-row">
-              <button type="button" data-qty-dec="basic_kit">-</button>
-              <span class="qty-value" id="qty_basic_kit">1</span>
-              <button type="button" data-qty-inc="basic_kit">+</button>
-            </div>
-            <button class="btn-add" data-add="basic_kit" data-price="450">Add to Cart - ₹450</button>
-          </div>
-        </div>
 
-        <!-- PRO kit -->
-        <div class="card">
-          <div>
-            <div class="card-img">
-              <div class="card-img-scroll">
-                <img src="img/kit-pro-1.jpg" alt="Professional draping kit flatlay" />
-                <img src="img/kit-pro-2.jpg" alt="Professional draping kit contents" />
-                <img src="img/kit-pro-3.jpg" alt="Professional draping kit packed" />
-                <img src="img/kit-pro-4.jpg" alt="Professional draping kit flatlay" />
-              </div>
+            <div class="card-badge">MAYILAI KIT</div>
+            <div class="card-title">
+              Mayilai Touch‑Up Kit – ₹299 + shipping
             </div>
-            <div class="card-badge">PROFESSIONAL KIT</div>
-            <div class="card-title">PROFESSIONAL Draping Kit – ₹1599 + shipping</div>
+            <p class="small-note">
+              Bridal Emergency Kit – For Brides & Makeup Artists.
+            </p>
+            <div class="limited-tag">For the first 50 orders only!</div>
+
             <ul class="kit-list">
-              <li>Saree pegs (big) - 2 nos</li>
-              <li>Safety pins (Big) - 1000 pins</li>
-              <li>Safety pins (small) - 1000 pins</li>
-              <li>Ball head pin wheel - 1 no (40 pins)</li>
-              <li>Iron protection mat - 1 no</li>
-              <li>Inch tape - 1 no</li>
-              <li>Saree packing covers (14×18) - 50 nos</li>
-              <li>Cloth tape - 20 nos</li>
-              <li>Six compartment storage box - 1 no</li>
-              <li>Wooden hanger - 2 nos</li>
-              <li>Hanger cover - 10 nos</li>
+              <li>Dry tissue (mini pack) - 1</li>
+              <li>Wet wipes - 2 nos</li>
+              <li>Safety pins - 10</li>
+              <li>Bob pins - 4</li>
+              <li>Ear buds - 4</li>
+              <li>Glue drops - 4</li>
+              <li>Body/cloth tape - 1</li>
+              <li>Bindi box (assorted) - 1</li>
+              <li>Makeup blender - 1</li>
+              <li>Powder container (empty) - 1</li>
+              <li>Powder puff - 1</li>
+              <li>Lipstick container (empty) - 1</li>
+              <li>Mini cotton wipes - 10 nos</li>
             </ul>
-            <p class="small-note">Packed safely in a secured strong package box.</p>
           </div>
+
           <div>
             <div class="qty-row">
-              <button type="button" data-qty-dec="pro_kit">-</button>
-              <span class="qty-value" id="qty_pro_kit">1</span>
-              <button type="button" data-qty-inc="pro_kit">+</button>
+              <button type="button" data-qty-dec="mayilai_kit">-</button>
+              <span class="qty-value" id="qty_mayilai_kit">1</span>
+              <button type="button" data-qty-inc="mayilai_kit">+</button>
             </div>
-            <button class="btn-add" data-add="pro_kit" data-price="1599">Add to Cart - ₹1599</button>
+            <button class="btn-add" data-add="mayilai_kit" data-price="299">
+              Add to Cart - ₹299
+            </button>
           </div>
         </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="container" id="contact">
+        <h2>Contact & WhatsApp Orders</h2>
+        <p class="section-sub">
+          For bulk enquiries, bridal bookings, or custom kits, reach out directly
+          on WhatsApp or call.
+        </p>
+
+        <div class="footer-grid">
+          <div>
+            <div class="footer-title">WhatsApp & Phone</div>
+            <p><strong>WhatsApp Orders:</strong> 98944 36936</p>
+            <p><strong>Draping Services:</strong> 99407 36936</p>
+            <a
+              class="footer-whatsapp"
+              href="https://wa.me/919894436936"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="whatsapp-icon"></span>
+              <span>Order on WhatsApp Now</span>
+            </a>
+          </div>
+          <div>
+            <div class="footer-title">About Nilaa Stores</div>
+            <p>
+              Nilaa Stores is the world's first & only store focused 100% on A‑Z
+              saree draping essentials.
+            </p>
+            <p>
+              Proudly originated in Tamil Nadu, India, serving drapists, MUAs
+              and brides across India.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          Nilaa Stores – World's First & Only Store with A‑Z Saree Draping
+          Essentials.
+        </p>
+        <p>
+          🥻 Wishing you lots of happy pleats & drapes!
+          <span class="heart">❤️</span>
+        </p>
+        <p>© 2024 Nilaa Stores. All rights reserved.</p>
       </div>
-    </section>
+    </footer>
 
-    <!-- Mayilai Touch-Up Kit -->
-    <section class="container" id="mayilai">
-      <h2>Mayilai Touch‑Up Kit (Bridal Emergency Kit)</h2>
-      <p class="section-sub">
-        Perfect mini kit for brides and makeup artists – quick touch‑ups for last‑minute saree and makeup fixes.
-      </p>
+    <!-- Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cartOverlay">
+      <div class="cart-drawer">
+        <div class="cart-header">
+          <span class="cart-title">Your Cart</span>
+          <button class="cart-close" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-body">
+          <div id="cartItems"></div>
+          <div id="cartEmpty" class="cart-empty">Your cart is empty.</div>
+        </div>
+        <div class="cart-footer">
+          <div class="cart-line">
+            <span>Subtotal</span>
+            <span>₹<span id="subtotalValue">0</span></span>
+          </div>
+          <div class="location-row">
+            <label for="locationSelect">Select your location</label>
+            <select id="locationSelect" class="location-select">
+              <option value="">Select location</option>
+              <option value="Coimbatore">Coimbatore (₹60/kg)</option>
+              <option value="OtherTN">Other Tamil Nadu (₹80/kg)</option>
+              <option value="OtherStates">Other States (₹120/kg)</option>
+            </select>
+          </div>
+          <div class="cart-line">
+            <span>Shipping</span>
+            <span>₹<span id="shippingValue">0</span></span>
+          </div>
+          <div class="cart-line">
+            <span>Estimated Weight</span>
+            <span><span id="weightValue">0</span> kg</span>
+          </div>
+          <div class="cart-total cart-line">
+            <span>Total</span>
+            <span>₹<span id="totalValue">0</span></span>
+          </div>
+          <p class="shipping-note">
+            Note: Shipping is estimated based on total package weight. Final
+            amount will be confirmed on WhatsApp before dispatch.
+          </p>
 
-      <div class="card highlight-card">
-        <div>
-          <div class="card-img">
-            <div class="card-img-scroll">
-              <img src="img/kit-mayilai-1.jpg" alt="Mayilai Touch-Up Kit flatlay" style="width:42%;" />
-              <img src="img/kit-mayilai-2.jpg" alt="Mayilai Touch-Up Kit contents" style="width:42%;" />
+          <!-- Customer details & payment -->
+          <div class="details-section">
+            <h4>Customer Details & Payment</h4>
+            <div class="form-field">
+              <label for="custName">Full Name *</label>
+              <input id="custName" type="text" placeholder="Your full name" />
+            </div>
+            <div class="form-field">
+              <label for="custPhone">Mobile Number *</label>
+              <input
+                id="custPhone"
+                type="tel"
+                placeholder="10‑digit mobile"
+              />
+            </div>
+            <div class="form-field">
+              <label for="custAddress">Full Address *</label>
+              <textarea
+                id="custAddress"
+                placeholder="Door no, street, area, city, district, state, pincode"
+              ></textarea>
+            </div>
+            <div class="form-field">
+              <label for="custPincode">Pincode *</label>
+              <input id="custPincode" type="text" placeholder="Pincode" />
+            </div>
+
+            <div class="form-field">
+              <label>Payment Method *</label>
+              <div class="payment-options">
+                <label
+                  ><input type="radio" name="payment" value="GPay" /> GPay</label
+                >
+                <label
+                  ><input type="radio" name="payment" value="PhonePe" />
+                  PhonePe</label
+                >
+                <label
+                  ><input type="radio" name="payment" value="Paytm" /> Paytm</label
+                >
+              </div>
+              <p class="upi-info">
+                All payments to: <strong>9894436936</strong> (GPay / PhonePe /
+                Paytm).
+              </p>
+              <div class="upi-placeholder">
+                UPI ID: <strong>[ADD YOUR UPI ID HERE]</strong>
+              </div>
+              <div class="qr-placeholder">
+                QR Code placeholder – add your payment QR image on the site or
+                near this text.
+              </div>
             </div>
           </div>
 
-          <div class="card-badge">MAYILAI KIT</div>
-          <div class="card-title">Mayilai Touch‑Up Kit – ₹299 + shipping</div>
-          <p class="small-note">Bridal Emergency Kit – For Brides & Makeup Artists.</p>
-
-          <ul class="kit-list">
-            <li>Dry tissue (mini pack) - 1</li>
-            <li>Wet wipes - 2 nos</li>
-            <li>Safety pins - 10</li>
-            <li>Bob pins - 4</li>
-            <li>Ear buds - 4</li>
-            <li>Glue drops - 4</li>
-            <li>Body/cloth tape - 4</li>
-            <li>Bindi box (assorted) - 1</li>
-            <li>Makeup blender - 1</li>
-            <li>Powder container (empty) - 1</li>
-            <li>Powder puff - 1</li>
-            <li>Lipstick container (empty) - 1</li>
-            <li>Mini cotton wipes - 10 nos</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="qty-row">
-            <button type="button" data-qty-dec="mayilai_kit">-</button>
-            <span class="qty-value" id="qty_mayilai_kit">1</span>
-            <button type="button" data-qty-inc="mayilai_kit">+</button>
-          </div>
-          <button class="btn-add" data-add="mayilai_kit" data-price="299">
-            Add to Cart - ₹299
+          <button class="btn-checkout" id="checkoutBtn" disabled>
+            Proceed to Checkout (WhatsApp)
           </button>
         </div>
       </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="container" id="contact">
-      <h2>Contact & WhatsApp Orders</h2>
-      <p class="section-sub">
-        For bulk enquiries, bridal bookings, or custom kits, reach out directly on WhatsApp or call.
-      </p>
-
-      <div class="footer-grid">
-        <div>
-          <div class="footer-title">WhatsApp & Phone</div>
-          <p><strong>WhatsApp Orders:</strong> 98944 36936</p>
-          <p><strong>Draping Services:</strong> 99407 36936</p>
-          <a class="footer-whatsapp" href="https://wa.me/919894436936" target="_blank" rel="noopener">
-            <span class="whatsapp-icon"></span>
-            <span>Order on WhatsApp Now</span>
-          </a>
-        </div>
-        <div>
-          <div class="footer-title">About Nilaa Stores</div>
-          <p>Nilaa Stores is the world's first & only store focused 100% on A‑Z saree draping essentials.</p>
-          <p>Proudly originated in Tamil Nadu, India, serving drapists, MUAs and brides across India.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>Nilaa Stores – World's First & Only Store with A‑Z Saree Draping Essentials.</p>
-      <p>🥻 Wishing you lots of happy pleats & drapes! <span class="heart">❤️</span></p>
-      <p>© 2024 Nilaa Stores. All rights reserved.</p>
     </div>
-  </footer>
 
-  <!-- Cart Drawer -->
-  <div class="cart-drawer-overlay" id="cartOverlay">
-    <div class="cart-drawer">
-      <div class="cart-header">
-        <span class="cart-title">Your Cart</span>
-        <button class="cart-close" id="closeCartBtn">&times;</button>
-      </div>
-      <div class="cart-body">
-        <div id="cartItems"></div>
-        <div id="cartEmpty" class="cart-empty">Your cart is empty.</div>
-      </div>
-      <div class="cart-footer">
-        <div class="cart-line">
-          <span>Subtotal</span>
-          <span>₹<span id="subtotalValue">0</span></span>
-        </div>
-        <div class="location-row">
-          <label for="locationSelect">Select your location</label>
-          <select id="locationSelect" class="location-select">
-            <option value="">Select location</option>
-            <option value="Coimbatore">Coimbatore (₹60/kg)</option>
-            <option value="OtherTN">Other Tamil Nadu (₹80/kg)</option>
-            <option value="OtherStates">Other States (₹120/kg)</option>
-          </select>
-        </div>
-        <div class="cart-line">
-          <span>Shipping</span>
-          <span>₹<span id="shippingValue">0</span></span>
-        </div>
-        <div class="cart-line">
-          <span>Estimated Weight</span>
-          <span><span id="weightValue">0</span> kg</span>
-        </div>
-        <div class="cart-total cart-line">
-          <span>Total</span>
-          <span>₹<span id="totalValue">0</span></span>
-        </div>
-        <p class="shipping-note">
-          Note: Shipping is estimated based on total package weight. Final amount will be confirmed on WhatsApp before dispatch.
-        </p>
+    <script>
+      // Product config
+      const productConfig = {
+        covers_14x18: {
+          name: "Saree Packing Covers (14×18)",
+          type: "option",
+          options: {
+            "20|120": { label: "20 pieces - ₹120 (₹6/pc)", weight: 0.3 },
+            "50|250": { label: "50 pieces - ₹250 (₹5/pc)", weight: 0.6 },
+            "100|380": { label: "100 pieces - ₹380 (₹3.8/pc)", weight: 1.0 },
+          },
+        },
+        covers_16x20: {
+          name: "Saree Packing Covers (16×20)",
+          type: "option",
+          options: {
+            "20|200": { label: "20 pieces - ₹200 (₹10/pc)", weight: 0.4 },
+            "50|350": { label: "50 pieces - ₹350 (₹7/pc)", weight: 0.8 },
+            "100|470": { label: "100 pieces - ₹470 (₹4.7/pc)", weight: 1.2 },
+          },
+        },
+        hanger_cover: {
+          name: 'Hanger Cover (35.4×23.6")',
+          type: "option",
+          options: {
+            "1|35": { label: "1 piece - ₹35 (₹35/pc)", weight: 0.1 },
+            "20|600": { label: "20 pieces - ₹600 (₹30/pc)", weight: 1.5 },
+          },
+        },
+        pins_0: {
+          name: "Safety Pins (Size 0)",
+          type: "option",
+          options: {
+            "100|80": { label: "100 pieces - ₹80 (₹0.8/pc)", weight: 0.15 },
+            "250|130": { label: "250 pieces - ₹130 (₹0.52/pc)", weight: 0.3 },
+            "500|200": { label: "500 pieces - ₹200 (₹0.4/pc)", weight: 0.6 },
+            "1000|300": { label: "1000 pieces - ₹300 (₹0.3/pc)", weight: 1.1 },
+          },
+        },
+        pins_1: {
+          name: "Safety Pins (Size 1)",
+          type: "option",
+          options: {
+            "100|100": { label: "100 pieces - ₹100 (₹1/pc)", weight: 0.18 },
+            "250|150": { label: "250 pieces - ₹150 (₹0.6/pc)", weight: 0.35 },
+            "500|250": { label: "500 pieces - ₹250 (₹0.5/pc)", weight: 0.7 },
+            "1000|400": { label: "1000 pieces - ₹400 (₹0.4/pc)", weight: 1.2 },
+          },
+        },
+        cloth_tape: {
+          name: "Cloth/Body Tape",
+          type: "option",
+          options: {
+            "10|20": { label: "10 pieces - ₹20 (₹2/pc)", weight: 0.05 },
+            "20|40": { label: "20 pieces - ₹40 (₹2/pc)", weight: 0.1 },
+          },
+        },
+        storage_box: {
+          name: "Storage Box (6 Compartment)",
+          type: "simple",
+          price: 65,
+          weight: 0.25,
+        },
+        wooden_hanger: {
+          name: "Wooden Hanger",
+          type: "simple",
+          price: 65,
+          weight: 0.2,
+        },
+        iron_mat: {
+          name: "Iron Protection Mat",
+          type: "simple",
+          price: 80,
+          weight: 0.3,
+        },
+        saree_pegs: {
+          name: "Saree Pegs (Big)",
+          type: "simple",
+          price: 50,
+          weight: 0.1,
+        },
+        inch_tape: {
+          name: "Inch Tape",
+          type: "simple",
+          price: 20,
+          weight: 0.05,
+        },
+        pin_wheel: {
+          name: "Pin Wheel",
+          type: "simple",
+          price: 20,
+          weight: 0.05,
+        },
+        mini_kit: {
+          name: "MINI Draping Kit",
+          type: "simple",
+          price: 299,
+          weight: 0.6,
+        },
+        basic_kit: {
+          name: "BASIC Draping Kit",
+          type: "simple",
+          price: 450,
+          weight: 0.8,
+        },
+        pro_kit: {
+          name: "PROFESSIONAL Draping Kit",
+          type: "simple",
+          price: 1599,
+          weight: 1.8,
+        },
+        mayilai_kit: {
+          name: "Mayilai Touch‑Up Kit",
+          type: "simple",
+          price: 299,
+          weight: 0.4,
+        },
+      };
 
-        <!-- Customer details & payment -->
-        <div class="details-section">
-          <h4>Customer Details & Payment</h4>
-          <div class="form-field">
-            <label for="custName">Full Name *</label>
-            <input id="custName" type="text" placeholder="Your full name" />
-          </div>
-          <div class="form-field">
-            <label for="custPhone">Mobile Number *</label>
-            <input id="custPhone" type="tel" placeholder="10‑digit mobile" />
-          </div>
-          <div class="form-field">
-            <label for="custAddress">Full Address *</label>
-            <textarea id="custAddress" placeholder="Door no, street, area, city, district, state, pincode"></textarea>
-          </div>
-          <div class="form-field">
-            <label for="custPincode">Pincode *</label>
-            <input id="custPincode" type="text" placeholder="Pincode" />
-          </div>
+      const cart = [];
 
-          <div class="form-field">
-            <label>Payment Method *</label>
-            <div class="payment-options">
-              <label><input type="radio" name="payment" value="GPay" /> GPay</label>
-              <label><input type="radio" name="payment" value="PhonePe" /> PhonePe</label>
-              <label><input type="radio" name="payment" value="Paytm" /> Paytm</label>
-            </div>
-            <p class="upi-info">All payments to: <strong>9894436936</strong> (GPay / PhonePe / Paytm).</p>
-            <div class="upi-placeholder">
-              UPI ID: <strong>[ADD YOUR UPI ID HERE]</strong>
-            </div>
-            <div class="qr-placeholder">
-              QR Code placeholder – add your payment QR image on the site or near this text.
-            </div>
-          </div>
-        </div>
+      const cartOverlay = document.getElementById("cartOverlay");
+      const cartCountEl = document.getElementById("cartCount");
+      const cartItemsEl = document.getElementById("cartItems");
+      const cartEmptyEl = document.getElementById("cartEmpty");
+      const subtotalValueEl = document.getElementById("subtotalValue");
+      const shippingValueEl = document.getElementById("shippingValue");
+      const weightValueEl = document.getElementById("weightValue");
+      const totalValueEl = document.getElementById("totalValue");
+      const locationSelectEl = document.getElementById("locationSelect");
+      const checkoutBtn = document.getElementById("checkoutBtn");
 
-        <button class="btn-checkout" id="checkoutBtn" disabled>Proceed to Checkout (WhatsApp)</button>
-      </div>
-    </div>
-  </div>
+      const custNameEl = document.getElementById("custName");
+      const custPhoneEl = document.getElementById("custPhone");
+      const custAddressEl = document.getElementById("custAddress");
+      const custPincodeEl = document.getElementById("custPincode");
 
-  <script>
-    // Product config
-    const productConfig = {
-      covers_14x18: {
-        name: "Saree Packing Covers (14×18)",
-        type: "option",
-        options: {
-          "20|120": { label: "20 pieces - ₹120 (₹6/pc)", weight: 0.3 },
-          "50|250": { label: "50 pieces - ₹250 (₹5/pc)", weight: 0.6 },
-          "100|380": { label: "100 pieces - ₹380 (₹3.8/pc)", weight: 1.0 }
-        }
-      },
-      covers_16x20: {
-        name: "Saree Packing Covers (16×20)",
-        type: "option",
-        options: {
-          "20|200": { label: "20 pieces - ₹200 (₹10/pc)", weight: 0.4 },
-          "50|350": { label: "50 pieces - ₹350 (₹7/pc)", weight: 0.8 },
-          "100|470": { label: "100 pieces - ₹470 (₹4.7/pc)", weight: 1.2 }
-        }
-      },
-      hanger_cover: {
-        name: "Hanger Cover (35.4×23.6\")",
-        type: "option",
-        options: {
-          "1|35": { label: "1 piece - ₹35 (₹35/pc)", weight: 0.1 },
-          "20|600": { label: "20 pieces - ₹600 (₹30/pc)", weight: 1.5 }
-        }
-      },
-      pins_0: {
-        name: "Safety Pins (Size 0)",
-        type: "option",
-        options: {
-          "100|80": { label: "100 pieces - ₹80 (₹0.8/pc)", weight: 0.15 },
-          "250|130": { label: "250 pieces - ₹130 (₹0.52/pc)", weight: 0.3 },
-          "500|200": { label: "500 pieces - ₹200 (₹0.4/pc)", weight: 0.6 },
-          "1000|300": { label: "1000 pieces - ₹300 (₹0.3/pc)", weight: 1.1 }
-        }
-      },
-      pins_1: {
-        name: "Safety Pins (Size 1)",
-        type: "option",
-        options: {
-          "100|100": { label: "100 pieces - ₹100 (₹1/pc)", weight: 0.18 },
-          "250|150": { label: "250 pieces - ₹150 (₹0.6/pc)", weight: 0.35 },
-          "500|250": { label: "500 pieces - ₹250 (₹0.5/pc)", weight: 0.7 },
-          "1000|400": { label: "1000 pieces - ₹400 (₹0.4/pc)", weight: 1.2 }
-        }
-      },
-      cloth_tape: {
-        name: "Cloth/Body Tape",
-        type: "option",
-        options: {
-          "10|20": { label: "10 pieces - ₹20 (₹2/pc)", weight: 0.05 },
-          "20|40": { label: "20 pieces - ₹40 (₹2/pc)", weight: 0.1 }
-        }
-      },
-      storage_box: {
-        name: "Storage Box (6 Compartment)",
-        type: "simple",
-        price: 65,
-        weight: 0.25
-      },
-      wooden_hanger: {
-        name: "Wooden Hanger",
-        type: "simple",
-        price: 65,
-        weight: 0.2
-      },
-      iron_mat: {
-        name: "Iron Protection Mat",
-        type: "simple",
-        price: 80,
-        weight: 0.3
-      },
-      saree_pegs: {
-        name: "Saree Pegs (Big)",
-        type: "simple",
-        price: 50,
-        weight: 0.1
-      },
-      inch_tape: {
-        name: "Inch Tape",
-        type: "simple",
-        price: 20,
-        weight: 0.05
-      },
-      pin_wheel: {
-        name: "Pin Wheel",
-        type: "simple",
-        price: 20,
-        weight: 0.05
-      },
-      mini_kit: {
-        name: "MINI Draping Kit",
-        type: "simple",
-        price: 299,
-        weight: 0.6
-      },
-      basic_kit: {
-        name: "BASIC Draping Kit",
-        type: "simple",
-        price: 450,
-        weight: 0.8
-      },
-      pro_kit: {
-        name: "PROFESSIONAL Draping Kit",
-        type: "simple",
-        price: 1599,
-        weight: 1.8
-      },
-      mayilai_kit: {
-        name: "Mayilai Touch‑Up Kit",
-        type: "simple",
-        price: 299,
-        weight: 0.4
-      }
-    };
-
-    const cart = [];
-
-    const cartOverlay = document.getElementById("cartOverlay");
-    const cartCountEl = document.getElementById("cartCount");
-    const cartItemsEl = document.getElementById("cartItems");
-    const cartEmptyEl = document.getElementById("cartEmpty");
-    const subtotalValueEl = document.getElementById("subtotalValue");
-    const shippingValueEl = document.getElementById("shippingValue");
-    const weightValueEl = document.getElementById("weightValue");
-    const totalValueEl = document.getElementById("totalValue");
-    const locationSelectEl = document.getElementById("locationSelect");
-    const checkoutBtn = document.getElementById("checkoutBtn");
-
-    const custNameEl = document.getElementById("custName");
-    const custPhoneEl = document.getElementById("custPhone");
-    const custAddressEl = document.getElementById("custAddress");
-    const custPincodeEl = document.getElementById("custPincode");
-
-    function formatPrice(num) {
-      return num.toFixed(0);
-    }
-
-    function updateOptionPriceLabels() {
-      document.querySelectorAll(".options-select").forEach((select) => {
-        const productId = select.dataset.productId;
-        const labelEl = document.querySelector(
-          `[data-price-label="${productId}"]`
-        );
-        if (!labelEl) return;
-        const [unitCount, price] = select.value.split("|");
-        const config = productConfig[productId];
-        let extra = "";
-        if (config && config.options && config.options[select.value]) {
-          const textLabel = config.options[select.value].label;
-          const match = textLabel.match(/\(([^)]+)\)/);
-          if (match) extra = " (" + match[1] + ")";
-        }
-        labelEl.textContent = "₹" + price + extra;
-      });
-    }
-    updateOptionPriceLabels();
-    document.querySelectorAll(".options-select").forEach((select) => {
-      select.addEventListener("change", updateOptionPriceLabels);
-    });
-
-    function adjustQty(id, delta) {
-      const el = document.getElementById("qty_" + id);
-      if (!el) return;
-      let val = parseInt(el.textContent, 10) || 1;
-      val += delta;
-      if (val < 1) val = 1;
-      el.textContent = val;
-    }
-    document.querySelectorAll("[data-qty-inc]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const id = btn.getAttribute("data-qty-inc");
-        adjustQty(id, 1);
-      });
-    });
-    document.querySelectorAll("[data-qty-dec]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const id = btn.getAttribute("data-qty-dec");
-        adjustQty(id, -1);
-      });
-    });
-
-    function addToCart(id) {
-      const config = productConfig[id];
-      if (!config) return;
-
-      const qtyEl = document.getElementById("qty_" + id);
-      const qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
-
-      let unitPrice = 0;
-      let weightPerUnit = 0;
-      let optionLabel = "";
-
-      if (config.type === "simple") {
-        unitPrice = config.price;
-        weightPerUnit = config.weight;
-      } else if (config.type === "option") {
-        const selectEl = document.querySelector(
-          `.options-select[data-product-id="${id}"]`
-        );
-        if (!selectEl) return;
-        const key = selectEl.value;
-        const [unitCountStr, priceStr] = key.split("|");
-        unitPrice = parseFloat(priceStr);
-        const optConf = config.options[key];
-        const optWeight = optConf ? optConf.weight : 0.5;
-        weightPerUnit = optWeight;
-        optionLabel = optConf ? optConf.label : "";
+      function formatPrice(num) {
+        return num.toFixed(0);
       }
 
-      const existingIndex = cart.findIndex(
-        (item) => item.id === id && item.optionLabel === optionLabel
-      );
-
-      if (existingIndex > -1) {
-        cart[existingIndex].qty += qty;
-      } else {
-        cart.push({
-          id,
-          name: config.name,
-          qty,
-          unitPrice,
-          weightPerUnit,
-          optionLabel
+      function updateOptionPriceLabels() {
+        document.querySelectorAll(".options-select").forEach((select) => {
+          const productId = select.dataset.productId;
+          const labelEl = document.querySelector(
+            `[data-price-label="${productId}"]`
+          );
+          if (!labelEl) return;
+          const [unitCount, price] = select.value.split("|");
+          const config = productConfig[productId];
+          let extra = "";
+          if (config && config.options && config.options[select.value]) {
+            const textLabel = config.options[select.value].label;
+            const match = textLabel.match(/\(([^)]+)\)/);
+            if (match) extra = " (" + match[1] + ")";
+          }
+          labelEl.textContent = "₹" + price + extra;
         });
       }
-
-      renderCart(); // Only update, do not open
-    }
-    document.querySelectorAll("[data-add]").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const id = btn.getAttribute("data-add");
-        addToCart(id);
+      updateOptionPriceLabels();
+      document.querySelectorAll(".options-select").forEach((select) => {
+        select.addEventListener("change", updateOptionPriceLabels);
       });
-    });
 
-    function removeCartItem(index) {
-      cart.splice(index, 1);
-      renderCart();
-    }
-    function changeCartQty(index, delta) {
-      const item = cart[index];
-      if (!item) return;
-      item.qty += delta;
-      if (item.qty <= 0) {
+      function adjustQty(id, delta) {
+        const el = document.getElementById("qty_" + id);
+        if (!el) return;
+        let val = parseInt(el.textContent, 10) || 1;
+        val += delta;
+        if (val < 1) val = 1;
+        el.textContent = val;
+      }
+      document.querySelectorAll("[data-qty-inc]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-qty-inc");
+          adjustQty(id, 1);
+        });
+      });
+      document.querySelectorAll("[data-qty-dec]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-qty-dec");
+          adjustQty(id, -1);
+        });
+      });
+
+      function addToCart(id) {
+        const config = productConfig[id];
+        if (!config) return;
+
+        const qtyEl = document.getElementById("qty_" + id);
+        const qty = qtyEl ? parseInt(qtyEl.textContent, 10) || 1 : 1;
+
+        let unitPrice = 0;
+        let weightPerUnit = 0;
+        let optionLabel = "";
+
+        if (config.type === "simple") {
+          unitPrice = config.price;
+          weightPerUnit = config.weight;
+        } else if (config.type === "option") {
+          const selectEl = document.querySelector(
+            `.options-select[data-product-id="${id}"]`
+          );
+          if (!selectEl) return;
+          const key = selectEl.value;
+          const [unitCountStr, priceStr] = key.split("|");
+          unitPrice = parseFloat(priceStr);
+          const optConf = config.options[key];
+          const optWeight = optConf ? optConf.weight : 0.5;
+          weightPerUnit = optWeight;
+          optionLabel = optConf ? optConf.label : "";
+        }
+
+        const existingIndex = cart.findIndex(
+          (item) => item.id === id && item.optionLabel === optionLabel
+        );
+
+        if (existingIndex > -1) {
+          cart[existingIndex].qty += qty;
+        } else {
+          cart.push({
+            id,
+            name: config.name,
+            qty,
+            unitPrice,
+            weightPerUnit,
+            optionLabel,
+          });
+        }
+
+        renderCart(); // Only update, do not open
+      }
+      document.querySelectorAll("[data-add]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-add");
+          addToCart(id);
+        });
+      });
+
+      function removeCartItem(index) {
         cart.splice(index, 1);
+        renderCart();
       }
-      renderCart();
-    }
-
-    // SHIPPING + TOTALS
-    function calculateTotals() {
-      let subtotal = 0;
-      let weight = 0;
-
-      cart.forEach((item) => {
-        subtotal += item.unitPrice * item.qty;
-        weight += item.weightPerUnit * item.qty;
-      });
-
-      // display weight with one decimal
-      weight = Math.round(weight * 10) / 10;
-
-      let shippingPerKg = 0;
-      const loc = locationSelectEl.value;
-      if (loc === "Coimbatore") shippingPerKg = 60;
-      if (loc === "OtherTN") shippingPerKg = 80;
-      if (loc === "OtherStates") shippingPerKg = 120;
-
-      let shipping = 0;
-      if (shippingPerKg > 0 && weight > 0) {
-        // always round UP to full kg, min 1 kg
-        const chargeableKg = Math.ceil(weight);
-        shipping = shippingPerKg * chargeableKg;
+      function changeCartQty(index, delta) {
+        const item = cart[index];
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty <= 0) {
+          cart.splice(index, 1);
+        }
+        renderCart();
       }
 
-      const total = subtotal + shipping;
+      // SHIPPING + TOTALS (changed section)
+      function calculateTotals() {
+        let subtotal = 0;
+        let weight = 0;
 
-      subtotalValueEl.textContent = formatPrice(subtotal);
-      weightValueEl.textContent = weight.toFixed(1);
-      shippingValueEl.textContent = formatPrice(shipping);
-      totalValueEl.textContent = formatPrice(total);
+        cart.forEach((item) => {
+          subtotal += item.unitPrice * item.qty;
+          weight += item.weightPerUnit * item.qty;
+        });
 
-      validateCheckout();
-    }
+        // show weight with one decimal in UI
+        weight = Math.round(weight * 10) / 10;
 
-    function validateCheckout() {
-      const hasCart = cart.length > 0;
-      const loc = locationSelectEl.value;
-      const nameFilled = custNameEl.value.trim().length > 0;
-      const phoneFilled = custPhoneEl.value.trim().length >= 10;
-      const addrFilled = custAddressEl.value.trim().length > 0;
-      const pinFilled = custPincodeEl.value.trim().length >= 6;
-      const paymentSelected = !!document.querySelector('input[name="payment"]:checked');
+        // base rate per kg
+        let baseRate = 0;
+        const loc = locationSelectEl.value;
+        if (loc === "Coimbatore") baseRate = 60; // 60 per kg
+        if (loc === "OtherTN") baseRate = 80; // 80 per kg
+        if (loc === "OtherStates") baseRate = 120; // 120 per kg
 
-      const canCheckout =
-        hasCart &&
-        loc !== "" &&
-        nameFilled &&
-        phoneFilled &&
-        addrFilled &&
-        pinFilled &&
-        paymentSelected;
+        let shipping = 0;
 
-      checkoutBtn.disabled = !canCheckout;
-    }
+        if (baseRate > 0 && weight > 0) {
+          // first 1 kg uses base rate
+          const kgFirst = Math.min(weight, 1); // up to 1 kg
+          const kgExtra = Math.max(weight - 1, 0); // weight above 1 kg
 
-    function renderCart() {
-      cartItemsEl.innerHTML = "";
-      if (cart.length === 0) {
-        cartEmptyEl.style.display = "block";
-      } else {
-        cartEmptyEl.style.display = "none";
+          const baseShipping = baseRate * kgFirst;
+
+          // extra kg rate with increase:
+          // CBE: +50%, Other TN: +40%, Other States: +30%
+          let extraRatePerKg = baseRate;
+          if (loc === "Coimbatore") {
+            extraRatePerKg = baseRate * 1.5; // 50% increase
+          } else if (loc === "OtherTN") {
+            extraRatePerKg = baseRate * 1.4; // 40% increase
+          } else if (loc === "OtherStates") {
+            extraRatePerKg = baseRate * 1.3; // 30% increase
+          }
+
+          const extraShipping = extraRatePerKg * kgExtra;
+
+          shipping = baseShipping + extraShipping;
+        }
+
+        const total = subtotal + shipping;
+
+        subtotalValueEl.textContent = formatPrice(subtotal);
+        weightValueEl.textContent = weight.toFixed(1);
+        shippingValueEl.textContent = formatPrice(shipping);
+        totalValueEl.textContent = formatPrice(total);
+
+        validateCheckout();
       }
 
-      cart.forEach((item, index) => {
-        const div = document.createElement("div");
-        div.className = "cart-item";
-        const optionText = item.optionLabel ? " · " + item.optionLabel : "";
-        div.innerHTML = `
+      function validateCheckout() {
+        const hasCart = cart.length > 0;
+        const loc = locationSelectEl.value;
+        const nameFilled = custNameEl.value.trim().length > 0;
+        const phoneFilled = custPhoneEl.value.trim().length >= 10;
+        const addrFilled = custAddressEl.value.trim().length > 0;
+        const pinFilled = custPincodeEl.value.trim().length >= 6;
+        const paymentSelected = !!document.querySelector(
+          'input[name="payment"]:checked'
+        );
+
+        const canCheckout =
+          hasCart &&
+          loc !== "" &&
+          nameFilled &&
+          phoneFilled &&
+          addrFilled &&
+          pinFilled &&
+          paymentSelected;
+
+        checkoutBtn.disabled = !canCheckout;
+      }
+
+      function renderCart() {
+        cartItemsEl.innerHTML = "";
+        if (cart.length === 0) {
+          cartEmptyEl.style.display = "block";
+        } else {
+          cartEmptyEl.style.display = "none";
+        }
+
+        cart.forEach((item, index) => {
+          const div = document.createElement("div");
+          div.className = "cart-item";
+          const optionText = item.optionLabel ? " · " + item.optionLabel : "";
+          div.innerHTML = `
           <div class="cart-item-top">
             <div>
               <div class="cart-item-name">${item.name}</div>
@@ -1699,122 +2014,136 @@
             <button type="button" class="cart-remove" data-cart-remove="${index}">Remove</button>
           </div>
         `;
-        cartItemsEl.appendChild(div);
+          cartItemsEl.appendChild(div);
+        });
+
+        cartCountEl.textContent = cart.reduce(
+          (sum, item) => sum + item.qty,
+          0
+        );
+        calculateTotals();
+
+        cartItemsEl.querySelectorAll("[data-cart-dec]").forEach((btn) =>
+          btn.addEventListener("click", () =>
+            changeCartQty(parseInt(btn.dataset.cartDec, 10), -1)
+          )
+        );
+        cartItemsEl.querySelectorAll("[data-cart-inc]").forEach((btn) =>
+          btn.addEventListener("click", () =>
+            changeCartQty(parseInt(btn.dataset.cartInc, 10), 1)
+          )
+        );
+        cartItemsEl
+          .querySelectorAll("[data-cart-remove]")
+          .forEach((btn) =>
+            btn.addEventListener("click", () =>
+              removeCartItem(parseInt(btn.dataset.cartRemove, 10))
+            )
+          );
+      }
+
+      function openCart() {
+        cartOverlay.style.display = "flex";
+      }
+      function closeCart() {
+        cartOverlay.style.display = "none";
+      }
+      document
+        .getElementById("openCartBtn")
+        .addEventListener("click", openCart);
+      document
+        .getElementById("closeCartBtn")
+        .addEventListener("click", closeCart);
+      cartOverlay.addEventListener("click", (e) => {
+        if (e.target === cartOverlay) closeCart();
       });
 
-      cartCountEl.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
-      calculateTotals();
-
-      cartItemsEl.querySelectorAll("[data-cart-dec]").forEach((btn) =>
-        btn.addEventListener("click", () =>
-          changeCartQty(parseInt(btn.dataset.cartDec, 10), -1)
-        )
+      locationSelectEl.addEventListener("change", calculateTotals);
+      [custNameEl, custPhoneEl, custAddressEl, custPincodeEl].forEach((el) =>
+        el.addEventListener("input", validateCheckout)
       );
-      cartItemsEl.querySelectorAll("[data-cart-inc]").forEach((btn) =>
-        btn.addEventListener("click", () =>
-          changeCartQty(parseInt(btn.dataset.cartInc, 10), 1)
-        )
-      );
-      cartItemsEl.querySelectorAll("[data-cart-remove]").forEach((btn) =>
-        btn.addEventListener("click", () =>
-          removeCartItem(parseInt(btn.dataset.cartRemove, 10))
-        )
-      );
-    }
+      document
+        .querySelectorAll('input[name="payment"]')
+        .forEach((el) => el.addEventListener("change", validateCheckout));
 
-    function openCart() {
-      cartOverlay.style.display = "flex";
-    }
-    function closeCart() {
-      cartOverlay.style.display = "none";
-    }
-    document.getElementById("openCartBtn").addEventListener("click", openCart);
-    document.getElementById("closeCartBtn").addEventListener("click", closeCart);
-    cartOverlay.addEventListener("click", (e) => {
-      if (e.target === cartOverlay) closeCart();
-    });
-
-    locationSelectEl.addEventListener("change", calculateTotals);
-    [custNameEl, custPhoneEl, custAddressEl, custPincodeEl].forEach((el) =>
-      el.addEventListener("input", validateCheckout)
-    );
-    document
-      .querySelectorAll('input[name="payment"]')
-      .forEach((el) => el.addEventListener("change", validateCheckout));
-
-    // Filters
-    document.querySelectorAll(".filter-pill").forEach((pill) => {
-      pill.addEventListener("click", () => {
-        document
-          .querySelectorAll(".filter-pill")
-          .forEach((p) => p.classList.remove("active"));
-        pill.classList.add("active");
-        const filter = pill.dataset.filter;
-        document.querySelectorAll("#productsGrid .card").forEach((card) => {
-          const category = card.dataset.category;
-          if (filter === "all" || category === filter) {
-            card.style.display = "";
-          } else {
-            card.style.display = "none";
-          }
+      // Filters
+      document.querySelectorAll(".filter-pill").forEach((pill) => {
+        pill.addEventListener("click", () => {
+          document
+            .querySelectorAll(".filter-pill")
+            .forEach((p) => p.classList.remove("active"));
+          pill.classList.add("active");
+          const filter = pill.dataset.filter;
+          document.querySelectorAll("#productsGrid .card").forEach((card) => {
+            const category = card.dataset.category;
+            if (filter === "all" || category === filter) {
+              card.style.display = "";
+            } else {
+              card.style.display = "none";
+            }
+          });
         });
       });
-    });
 
-    // Checkout -> WhatsApp
-    checkoutBtn.addEventListener("click", () => {
-      if (cart.length === 0 || checkoutBtn.disabled) return;
+      // Checkout -> WhatsApp
+      checkoutBtn.addEventListener("click", () => {
+        if (cart.length === 0 || checkoutBtn.disabled) return;
 
-      const loc = locationSelectEl.value;
-      let locationText = "";
-      if (loc === "Coimbatore") locationText = "Coimbatore (₹60/kg)";
-      if (loc === "OtherTN") locationText = "Other Tamil Nadu (₹80/kg)";
-      if (loc === "OtherStates") locationText = "Other States (₹120/kg)";
+        const loc = locationSelectEl.value;
+        let locationText = "";
+        if (loc === "Coimbatore") locationText = "Coimbatore (₹60/kg)";
+        if (loc === "OtherTN")
+          locationText = "Other Tamil Nadu (₹80/kg)";
+        if (loc === "OtherStates")
+          locationText = "Other States (₹120/kg)";
 
-      const paymentRadio = document.querySelector('input[name="payment"]:checked');
-      const paymentMethod = paymentRadio ? paymentRadio.value : "";
-
-      const name = custNameEl.value.trim();
-      const phone = custPhoneEl.value.trim();
-      const address = custAddressEl.value.trim();
-      const pincode = custPincodeEl.value.trim();
-
-      const lines = [];
-      lines.push("Nilaa Stores – New Order");
-      lines.push("");
-      lines.push("Customer Details:");
-      lines.push("Name: " + name);
-      lines.push("Mobile: " + phone);
-      lines.push("Address: " + address);
-      lines.push("Pincode: " + pincode);
-      lines.push("Location: " + locationText);
-      lines.push("Payment: " + paymentMethod + " to 9894436936");
-      lines.push("");
-      lines.push("Order Items:");
-      cart.forEach((item) => {
-        const optionText = item.optionLabel ? " | " + item.optionLabel : "";
-        lines.push(
-          `${item.name}${optionText} – ₹${formatPrice(
-            item.unitPrice
-          )} × ${item.qty} = ₹${formatPrice(item.unitPrice * item.qty)}`
+        const paymentRadio = document.querySelector(
+          'input[name="payment"]:checked'
         );
+        const paymentMethod = paymentRadio ? paymentRadio.value : "";
+
+        const name = custNameEl.value.trim();
+        const phone = custPhoneEl.value.trim();
+        const address = custAddressEl.value.trim();
+        const pincode = custPincodeEl.value.trim();
+
+        const lines = [];
+        lines.push("Nilaa Stores – New Order");
+        lines.push("");
+        lines.push("Customer Details:");
+        lines.push("Name: " + name);
+        lines.push("Mobile: " + phone);
+        lines.push("Address: " + address);
+        lines.push("Pincode: " + pincode);
+        lines.push("Location: " + locationText);
+        lines.push("Payment: " + paymentMethod + " to 9894436936");
+        lines.push("");
+        lines.push("Order Items:");
+        cart.forEach((item) => {
+          const optionText = item.optionLabel ? " | " + item.optionLabel : "";
+          lines.push(
+            `${item.name}${optionText} – ₹${formatPrice(
+              item.unitPrice
+            )} × ${item.qty} = ₹${formatPrice(
+              item.unitPrice * item.qty
+            )}`
+          );
+        });
+        lines.push("");
+        lines.push(
+          `Subtotal: ₹${subtotalValueEl.textContent}, Shipping (approx): ₹${shippingValueEl.textContent}`
+        );
+        lines.push(
+          `Estimated weight: ${weightValueEl.textContent} kg`
+        );
+        lines.push(`Total (approx): ₹${totalValueEl.textContent}`);
+        lines.push("");
+        lines.push("Please confirm payment and final amount.");
+
+        const msg = encodeURIComponent(lines.join("\n"));
+        const whatsappUrl = `https://wa.me/919894436936?text=${msg}`;
+        window.open(whatsappUrl, "_blank");
       });
-      lines.push("");
-      lines.push(
-        `Subtotal: ₹${subtotalValueEl.textContent}, Shipping (approx): ₹${shippingValueEl.textContent}`
-      );
-      lines.push(
-        `Estimated weight: ${weightValueEl.textContent} kg`
-      );
-      lines.push(`Total (approx): ₹${totalValueEl.textContent}`);
-      lines.push("");
-      lines.push("Please confirm payment and final amount.");
-
-      const msg = encodeURIComponent(lines.join("\n"));
-      const whatsappUrl = `https://wa.me/919894436936?text=${msg}`;
-      window.open(whatsappUrl, "_blank");
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
-
