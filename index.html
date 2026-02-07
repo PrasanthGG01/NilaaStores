@@ -1626,12 +1626,12 @@
 
       let shippingPerKg = 0;
       const loc = locationSelectEl.value;
-      if (loc === "Coimbatore") shippingPerKg = 50;
-      if (loc === "OtherTN") shippingPerKg = 70;
+      if (loc === "Coimbatore") shippingPerKg = 60;
+      if (loc === "OtherTN") shippingPerKg = 80;
       if (loc === "OtherStates") shippingPerKg = 120;
 
       let shipping = 0;
-      if (shippingPerKg > 0 && weight > 0) {
+      if (shippingPerKg > 1 && weight > 1) {
         shipping = shippingPerKg * weight;
       }
 
@@ -1765,8 +1765,8 @@
 
       const loc = locationSelectEl.value;
       let locationText = "";
-      if (loc === "Coimbatore") locationText = "Coimbatore (₹50/kg)";
-      if (loc === "OtherTN") locationText = "Other Tamil Nadu (₹70/kg)";
+      if (loc === "Coimbatore") locationText = "Coimbatore (₹60/kg)";
+      if (loc === "OtherTN") locationText = "Other Tamil Nadu (₹80/kg)";
       if (loc === "OtherStates") locationText = "Other States (₹120/kg)";
 
       const paymentRadio = document.querySelector('input[name="payment"]:checked');
@@ -1815,6 +1815,7 @@
   </script>
 </body>
 </html>
+
 
 
 
